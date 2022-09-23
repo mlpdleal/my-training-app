@@ -6,18 +6,21 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct WorkoutCreateView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.dismiss) var dismiss
     
-    @State private var shouldPresentCamera = false
     
+    @State var photo: Data? = nil
     @State var name: String = ""
     @State var description: String = ""
     
     @ObservedObject var viewModel: WorkoutViewModel
+    
+    @StateObject var imagePicker = ImagePicker()
     
     init(viewModel: WorkoutViewModel){
         self.viewModel = viewModel
@@ -27,14 +30,28 @@ struct WorkoutCreateView: View {
         ScrollView(showsIndicators: false){
             VStack(alignment: .center, spacing: 12){
                 Button {
-                    self.shouldPresentCamera = true
+
                 } label: {
                     VStack {
-                        Image(systemName: "camera.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 100, height: 100)
-                            .foregroundColor(.red)
+                    
+                        PhotosPicker(selection: $imagePicker.imageSelection){
+                            
+                            if let image = imagePicker.image {
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 320, height: 180)
+                            } else {
+                                Image(systemName: "camera.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100, height: 100)
+                                    .foregroundColor(.red)
+                            }
+                            
+                        }
+                        
+
                         
                         Text("Click here to send")
                             .foregroundColor(.red)
@@ -49,7 +66,12 @@ struct WorkoutCreateView: View {
             VStack{
                 
                 Button{
-                    let workout = Workout(id: UUID(), name: name, description: description, imageData: nil)
+                    
+                    if let image = imagePicker.imageData {
+                        self.photo = image
+                    }
+                    
+                    let workout = Workout(id: UUID(), name: name, description: description, imageData: photo)
                     viewModel.add(workout)
                     dismiss()
 

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EA2E7B5428DE315B00CB95F4 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B5328DE315B00CB95F4 /* WorkoutCardView.swift */; };
+		EA2E7B5628DE66E000CB95F4 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B5528DE66E000CB95F4 /* WorkoutDetailView.swift */; };
+		EA2E7B5828DE71AE00CB95F4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B5728DE71AE00CB95F4 /* ImagePicker.swift */; };
+		EA2E7B5E28DE7E9800CB95F4 /* ExerciceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B5D28DE7E9800CB95F4 /* ExerciceModel.swift */; };
 		EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */; };
 		EA7BFD0428DCB0C500AE6E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */; };
 		EA7BFD0728DCB0C500AE6E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0628DCB0C500AE6E04 /* Preview Assets.xcassets */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		EA2E7B5328DE315B00CB95F4 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
+		EA2E7B5528DE66E000CB95F4 /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		EA2E7B5728DE71AE00CB95F4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		EA2E7B5D28DE7E9800CB95F4 /* ExerciceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciceModel.swift; sourceTree = "<group>"; };
 		EA7BFCFC28DCB0C300AE6E04 /* MyTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrainingApp.swift; sourceTree = "<group>"; };
 		EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +86,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA2E7B5928DE7E4700CB95F4 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E7B5C28DE7E8000CB95F4 /* ViewModel */,
+				EA2E7B5B28DE7E7800CB95F4 /* Model */,
+				EA2E7B5A28DE7E7300CB95F4 /* View */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
+		EA2E7B5A28DE7E7300CB95F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA2E7B5B28DE7E7800CB95F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E7B5D28DE7E9800CB95F4 /* ExerciceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA2E7B5C28DE7E8000CB95F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		EA7BFCF328DCB0C300AE6E04 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +138,7 @@
 		EA7BFCFE28DCB0C300AE6E04 /* MyTraining */ = {
 			isa = PBXGroup;
 			children = (
+				EA2E7B5928DE7E4700CB95F4 /* Exercise */,
 				EACCF88228DCE6590058186C /* Common */,
 				EACCF87A28DCE0E80058186C /* Workout */,
 				EA7BFD1728DCB9CD00AE6E04 /* Home */,
@@ -213,6 +252,7 @@
 				EACCF88028DCE1790058186C /* WorkoutListView.swift */,
 				EACCF89028DD0BF40058186C /* WorkoutCreateView.swift */,
 				EA2E7B5328DE315B00CB95F4 /* WorkoutCardView.swift */,
+				EA2E7B5528DE66E000CB95F4 /* WorkoutDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				EACCF88C28DCEF130058186C /* FileManager.swift */,
+				EA2E7B5728DE71AE00CB95F4 /* ImagePicker.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -369,6 +410,8 @@
 			files = (
 				EA2E7B5428DE315B00CB95F4 /* WorkoutCardView.swift in Sources */,
 				EACCF89128DD0BF40058186C /* WorkoutCreateView.swift in Sources */,
+				EA2E7B5628DE66E000CB95F4 /* WorkoutDetailView.swift in Sources */,
+				EA2E7B5828DE71AE00CB95F4 /* ImagePicker.swift in Sources */,
 				EACCF88A28DCEB2C0058186C /* HomeViewRouter.swift in Sources */,
 				EA7BFD1428DCB6A200AE6E04 /* SplashUIState.swift in Sources */,
 				EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */,
@@ -380,6 +423,7 @@
 				EA7BFD1E28DCC9B200AE6E04 /* SplashViewRouter.swift in Sources */,
 				EA9BB27828DDE4CD0093E742 /* WorkoutViewRouter.swift in Sources */,
 				EA7BFD1228DCB10800AE6E04 /* SplashView.swift in Sources */,
+				EA2E7B5E28DE7E9800CB95F4 /* ExerciceModel.swift in Sources */,
 				EACCF88628DCE6A60058186C /* ButtonStyle.swift in Sources */,
 				EA7BFD1A28DCB9F100AE6E04 /* HomeView.swift in Sources */,
 				EA7BFD1628DCB70B00AE6E04 /* SplashViewModel.swift in Sources */,

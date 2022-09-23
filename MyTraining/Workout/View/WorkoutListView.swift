@@ -16,12 +16,14 @@ struct WorkoutListView: View {
             VStack{
                 topContainer
                 addButton
-                VStack{
-                    ForEach(viewModel.workouts){ workout in
-                        Text(workout.name)
+                ScrollView(showsIndicators: false){
+                    VStack{
+                        ForEach(viewModel.getWorkouts()){ workout in
+                            WorkoutCardView(id: .constant(workout.id), photo: .constant(workout.imageData), name: .constant(workout.name) , description: .constant(workout.description), workoutViewModel: viewModel)
+                                .padding(.horizontal, 16)
+                        }
                     }
                 }
-                
                 .padding(.top, 12)
                 Spacer()
             }
@@ -65,7 +67,7 @@ extension WorkoutListView {
         NavigationLink {
             viewModel.workoutCreateView(viewModel: viewModel)
         } label: {
-            Label("Create Workout", systemImage: "plus.app")
+            Label("Create new routine", systemImage: "plus.app")
                 
         }
         .modifier(ButtonStyle())

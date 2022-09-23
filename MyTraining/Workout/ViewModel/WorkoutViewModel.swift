@@ -10,7 +10,7 @@ import SwiftUI
 
 class WorkoutViewModel: ObservableObject{
     
-    @Published var workouts: [Workout]
+    @Published private var workouts: [Workout]
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("Workouts")
     
@@ -33,9 +33,27 @@ extension WorkoutViewModel {
         workouts.append(workout)
         save()
     }
+    
+    func getWorkouts() -> [Workout]{
+        return workouts
+    }
+    
+    func getWorkout(workoutId: UUID) -> Workout {
+        let index = workouts.firstIndex{ $0.id == workoutId }
+        return workouts[index!]
+    }
+    
+    func deleteWorkout(workoutId: UUID) {
+        
+        let index = workouts.firstIndex{ $0.id == workoutId }
+        
+        workouts.remove(at: index!)
+        save()
+    }
         
     func deleteAll() {
         workouts.removeAll()
+        save()
     }
     
     private func save() {
