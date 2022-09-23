@@ -10,13 +10,18 @@ import SwiftUI
 struct WorkoutCreateView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) var dismiss
     
     @State private var shouldPresentCamera = false
     
     @State var name: String = ""
     @State var description: String = ""
     
-    @ObservedObject var viewModel = WorkoutViewModel()
+    @ObservedObject var viewModel: WorkoutViewModel
+    
+    init(viewModel: WorkoutViewModel){
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         ScrollView(showsIndicators: false){
@@ -46,7 +51,7 @@ struct WorkoutCreateView: View {
                 Button{
                     let workout = Workout(id: UUID(), name: name, description: description, imageData: nil)
                     viewModel.add(workout)
-                    self.presentationMode.wrappedValue.dismiss()
+                    dismiss()
 
                 } label: {
                     Text("Save")
@@ -78,7 +83,7 @@ struct WorkoutCreateView: View {
 
 struct WorkoutCreateView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutCreateView()
+        WorkoutCreateView(viewModel: WorkoutViewModel())
     }
 }
 

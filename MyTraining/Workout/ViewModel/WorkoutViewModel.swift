@@ -10,14 +10,14 @@ import SwiftUI
 
 class WorkoutViewModel: ObservableObject{
     
-    private var workouts: Set<Workout>
+    @Published var workouts: [Workout]
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("Workouts")
     
     init(){
         do{
             let data = try Data(contentsOf: savePath)
-            workouts = try JSONDecoder().decode(Set<Workout>.self, from: data)
+            workouts = try JSONDecoder().decode([Workout].self, from: data)
         } catch {
             workouts = []
         }
@@ -30,21 +30,10 @@ extension WorkoutViewModel {
     
     func add(_ workout: Workout){
         objectWillChange.send()
-        workouts.insert(workout)
+        workouts.append(workout)
         save()
     }
-    
-    func getWorkouts() -> [Workout] {
         
-        var workoutsArray: [Workout] = []
-        
-        for workout in workouts {
-            workoutsArray.append(workout)
-        }
-        
-        return workoutsArray
-    }
-    
     func deleteAll() {
         workouts.removeAll()
     }
@@ -62,8 +51,8 @@ extension WorkoutViewModel {
 
 extension WorkoutViewModel{
     
-    func workoutCreateView() -> some View {
-        return WorkoutViewRouter.makeWorkoutCreateView()
+    func workoutCreateView(viewModel: WorkoutViewModel) -> some View {
+        return WorkoutViewRouter.makeWorkoutCreateView(viewModel: viewModel)
     }
     
 }

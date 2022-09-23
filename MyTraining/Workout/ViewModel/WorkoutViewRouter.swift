@@ -10,8 +10,8 @@ import SwiftUI
 
 enum WorkoutViewRouter {
     
-    static func makeWorkoutCreateView() -> some View {
-        return WorkoutCreateView()
+    static func makeWorkoutCreateView(viewModel: WorkoutViewModel) -> some View {
+        return WorkoutCreateView(viewModel: viewModel)
     }
     
 }

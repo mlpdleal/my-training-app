@@ -17,7 +17,7 @@ struct WorkoutListView: View {
                 topContainer
                 addButton
                 VStack{
-                    ForEach(viewModel.getWorkouts()){ workout in
+                    ForEach(viewModel.workouts){ workout in
                         Text(workout.name)
                     }
                 }
@@ -63,7 +63,7 @@ extension WorkoutListView {
     
     var addButton: some View{
         NavigationLink {
-            viewModel.workoutCreateView()
+            viewModel.workoutCreateView(viewModel: viewModel)
         } label: {
             Label("Create Workout", systemImage: "plus.app")
                 

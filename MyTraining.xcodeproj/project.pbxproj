@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA2E7B5428DE315B00CB95F4 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B5328DE315B00CB95F4 /* WorkoutCardView.swift */; };
 		EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */; };
 		EA7BFD0428DCB0C500AE6E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */; };
 		EA7BFD0728DCB0C500AE6E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0628DCB0C500AE6E04 /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA2E7B5328DE315B00CB95F4 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
 		EA7BFCFC28DCB0C300AE6E04 /* MyTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrainingApp.swift; sourceTree = "<group>"; };
 		EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				EACCF88028DCE1790058186C /* WorkoutListView.swift */,
 				EACCF89028DD0BF40058186C /* WorkoutCreateView.swift */,
+				EA2E7B5328DE315B00CB95F4 /* WorkoutCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2E7B5428DE315B00CB95F4 /* WorkoutCardView.swift in Sources */,
 				EACCF89128DD0BF40058186C /* WorkoutCreateView.swift in Sources */,
 				EACCF88A28DCEB2C0058186C /* HomeViewRouter.swift in Sources */,
 				EA7BFD1428DCB6A200AE6E04 /* SplashUIState.swift in Sources */,
