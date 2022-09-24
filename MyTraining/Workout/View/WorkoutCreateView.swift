@@ -91,8 +91,8 @@ struct WorkoutCreateView: View {
             }
             
             VStack{
-                ForEach(exerciseViewModel.getExercises()){
-                    Text($0.name)
+                ForEach(exerciseViewModel.getExercises()){ exercise in
+                    ExerciseCardView(id: .constant(exercise.id), photo: .constant(exercise.photo), name: .constant(exercise.name), viewModel: exerciseViewModel)
                 }
             }
             

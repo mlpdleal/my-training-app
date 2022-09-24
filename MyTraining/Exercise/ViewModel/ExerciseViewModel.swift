@@ -20,6 +20,13 @@ class ExerciseViewModel: ObservableObject {
         return exercises
     }
     
+    func deleteExercise(id: UUID){
+        
+        let index = exercises.firstIndex{ $0.id == id }
+        
+        exercises.remove(at: index!)
+    }
+    
 }
 
 extension ExerciseViewModel {

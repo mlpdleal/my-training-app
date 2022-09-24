@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ExerciseView: View {
     
     @Environment(\.dismiss) var dismiss 
     
+    @State var photo: Data? = nil
     @State var name: String = ""
     @State var reps: String = ""
     @State var weight: String = ""
@@ -21,6 +23,8 @@ struct ExerciseView: View {
     
     @ObservedObject var viewModel: ExerciseViewModel
     
+    @StateObject var imagePicker = ImagePicker()
+    
     init(viewModel: ExerciseViewModel){
         self.viewModel = viewModel
     }
@@ -28,6 +32,36 @@ struct ExerciseView: View {
     var body: some View {
         NavigationView{
             Form{
+                
+                    PhotosPicker(selection: $imagePicker.imageSelection){
+                        
+                        if let image = imagePicker.image {
+                            HStack{
+                                Spacer()
+                                image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 320, height: 180)
+                                
+                                Spacer()
+                            }
+                        } else {
+                            HStack{
+                                Spacer()
+                                VStack{
+                                    Image(systemName: "camera.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 100, height: 100)
+                                        .foregroundColor(.accentColor)
+                                    
+                                    Text("Click here to upload image")
+                                }
+                                Spacer()
+                            }
+                        }
+                    }
+                
                 
                 HStack{
                     Text("Name: ")
@@ -81,7 +115,12 @@ struct ExerciseView: View {
                 HStack(alignment: .center){
                     Spacer()
                     Button {
-                        viewModel.add(exercise: Exercise(id: UUID(), photo: nil, name: name, reps: reps, weight: weight, rest: rest, series: series, cadence: cadence, description: description))
+                        
+                        if let image = imagePicker.imageData {
+                            self.photo = image
+                        }
+                        
+                        viewModel.add(exercise: Exercise(id: UUID(), photo: photo, name: name, reps: reps, weight: weight, rest: rest, series: series, cadence: cadence, description: description))
                         dismiss()
                     } label: {
                         Text("Save")

@@ -14,6 +14,7 @@
 		EA2E7B6028DF775000CB95F4 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B5F28DF775000CB95F4 /* ExerciseView.swift */; };
 		EA2E7B6228DF829300CB95F4 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6128DF829300CB95F4 /* ExerciseViewModel.swift */; };
 		EA2E7B6428DF84F000CB95F4 /* ExerciseViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6328DF84F000CB95F4 /* ExerciseViewRouter.swift */; };
+		EA2E7B6628DFB41C00CB95F4 /* ExerciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6528DFB41C00CB95F4 /* ExerciseCardView.swift */; };
 		EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */; };
 		EA7BFD0428DCB0C500AE6E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */; };
 		EA7BFD0728DCB0C500AE6E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0628DCB0C500AE6E04 /* Preview Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		EA2E7B5F28DF775000CB95F4 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
 		EA2E7B6128DF829300CB95F4 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		EA2E7B6328DF84F000CB95F4 /* ExerciseViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewRouter.swift; sourceTree = "<group>"; };
+		EA2E7B6528DFB41C00CB95F4 /* ExerciseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCardView.swift; sourceTree = "<group>"; };
 		EA7BFCFC28DCB0C300AE6E04 /* MyTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrainingApp.swift; sourceTree = "<group>"; };
 		EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EA2E7B5F28DF775000CB95F4 /* ExerciseView.swift */,
+				EA2E7B6528DFB41C00CB95F4 /* ExerciseCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				EA2E7B6428DF84F000CB95F4 /* ExerciseViewRouter.swift in Sources */,
 				EACCF87F28DCE13C0058186C /* HomeViewModel.swift in Sources */,
 				EA2E7B6228DF829300CB95F4 /* ExerciseViewModel.swift in Sources */,
+				EA2E7B6628DFB41C00CB95F4 /* ExerciseCardView.swift in Sources */,
 				EACCF88828DCE9E70058186C /* WorkoutViewModel.swift in Sources */,
 				EA7BFD1E28DCC9B200AE6E04 /* SplashViewRouter.swift in Sources */,
 				EA9BB27828DDE4CD0093E742 /* WorkoutViewRouter.swift in Sources */,

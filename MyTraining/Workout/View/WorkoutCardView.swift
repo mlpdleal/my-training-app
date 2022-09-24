@@ -53,12 +53,15 @@ struct WorkoutCardView: View {
                             Text(name)
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(.red)
+                                .bold()
+                                .padding(.bottom, 2)
                                                         
                             ForEach(exercises) { exercise in
-                                /*@START_MENU_TOKEN@*/Text(exercise.name)/*@END_MENU_TOKEN@*/
+                                Text("- \(exercise.name)")
                                     .multilineTextAlignment(.leading)
                                     .foregroundColor(.gray)
-                                    .bold()
+                                    .font(.callout)
+                                    
                             }
                             
                         }
