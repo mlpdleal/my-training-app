@@ -13,6 +13,8 @@ struct WorkoutCreateView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.dismiss) var dismiss
     
+    @State var showSheet: Bool = false
+    
     
     @State var photo: Data? = nil
     @State var name: String = ""
@@ -60,8 +62,30 @@ struct WorkoutCreateView: View {
                 .padding(.bottom, 12)
             }
             
-            makeTextField("Type here the name of the workout", text: $name)
-            makeTextEditor("Type bellow the description", text: $description)
+            VStack{
+                makeTextField("Type here the name of the workout", text: $name)
+                makeTextEditor("Type bellow the description", text: $description)
+            }
+        
+            Button {
+                self.showSheet = true 
+            } label: {
+                HStack{
+                    Spacer()
+                    VStack{
+                        Image(systemName: "plus")
+                            .foregroundColor(.accentColor)
+                            .font(.callout.bold())
+                        
+                        Text("Add exercise")
+                            .foregroundColor(.accentColor)
+                            .font(.footnote)
+                    }
+                    .padding(.trailing, 20)
+                    .padding(.vertical, 5)
+                }
+            
+            }
             
             VStack{
                 
@@ -99,6 +123,9 @@ struct WorkoutCreateView: View {
             }
            
             
+        }
+        .sheet(isPresented: $showSheet){
+            ExerciseView()
         }
     }
 }

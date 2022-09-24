@@ -33,6 +33,11 @@ extension SplashView {
                 .resizable()
                 .ignoresSafeArea()
                 .scaledToFill()
+            
+            Text("Created by: Manoel Leal")
+                .foregroundColor(.white)
+                .padding(.top, 600)
+               
         }
     }
 }

@@ -15,6 +15,7 @@ struct Exercise: Codable, Hashable, Identifiable{
     let reps: String?
     let weight: String?
     let rest: String?
+    let series: String?
     let cadence: String?
     let description: String?
     

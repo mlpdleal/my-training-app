@@ -49,11 +49,13 @@ struct WorkoutCardView: View {
                     Spacer()
                     Spacer()
                     HStack(alignment: .top){
-                        VStack{
+                        VStack(alignment: .leading){
                             Text(name)
+                                .multilineTextAlignment(.leading)
                                 .foregroundColor(.red)
                             
                             Text(description)
+                                .multilineTextAlignment(.leading)
                                 .foregroundColor(.gray)
                                 .bold()
                             
