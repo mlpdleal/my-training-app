@@ -14,7 +14,7 @@ struct WorkoutCardView: View {
     @Binding var id: UUID
     @Binding var photo: Data?
     @Binding var name: String
-    @Binding var description: String
+    @Binding var exercises: [Exercise]
     
     @ObservedObject var workoutViewModel: WorkoutViewModel
     
@@ -53,11 +53,13 @@ struct WorkoutCardView: View {
                             Text(name)
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(.red)
-                            
-                            Text(description)
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(.gray)
-                                .bold()
+                                                        
+                            ForEach(exercises) { exercise in
+                                /*@START_MENU_TOKEN@*/Text(exercise.name)/*@END_MENU_TOKEN@*/
+                                    .multilineTextAlignment(.leading)
+                                    .foregroundColor(.gray)
+                                    .bold()
+                            }
                             
                         }
                         Spacer()
@@ -91,6 +93,10 @@ struct WorkoutCardView: View {
 struct WorkoutCardView_Previews: PreviewProvider {
     static var previews: some View {
         
-        WorkoutCardView(id: .constant(UUID()), photo: .constant(nil), name: .constant("Upper Body Routine"), description: .constant("test routine"), workoutViewModel: WorkoutViewModel() )
+        
+        WorkoutCardView(id: .constant(UUID()),
+                        photo: .constant(nil),
+                        name: .constant("Upper Body Routine"),
+                        exercises: .constant([Exercise(id: UUID(), photo: nil, name: "Pull Up", reps: nil, weight: nil, rest: nil, series: nil, cadence: nil, description: nil)]), workoutViewModel: WorkoutViewModel() )
     }
 }

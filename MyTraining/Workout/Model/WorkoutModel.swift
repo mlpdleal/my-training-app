@@ -13,4 +13,5 @@ struct Workout: Codable, Hashable, Identifiable{
     let name: String
     let description: String
     let imageData: Data?
+    let exercises: [Exercise]?
 }

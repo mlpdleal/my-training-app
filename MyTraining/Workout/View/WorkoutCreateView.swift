@@ -19,8 +19,11 @@ struct WorkoutCreateView: View {
     @State var photo: Data? = nil
     @State var name: String = ""
     @State var description: String = ""
+ 
     
     @ObservedObject var viewModel: WorkoutViewModel
+    
+    @ObservedObject var exerciseViewModel = ExerciseViewModel()
     
     @StateObject var imagePicker = ImagePicker()
     
@@ -68,7 +71,7 @@ struct WorkoutCreateView: View {
             }
         
             Button {
-                self.showSheet = true 
+                self.showSheet = true
             } label: {
                 HStack{
                     Spacer()
@@ -88,6 +91,12 @@ struct WorkoutCreateView: View {
             }
             
             VStack{
+                ForEach(exerciseViewModel.getExercises()){
+                    Text($0.name)
+                }
+            }
+            
+            VStack{
                 
                 Button{
                     
@@ -95,7 +104,7 @@ struct WorkoutCreateView: View {
                         self.photo = image
                     }
                     
-                    let workout = Workout(id: UUID(), name: name, description: description, imageData: photo)
+                    let workout = Workout(id: UUID(), name: name, description: description, imageData: photo, exercises: exerciseViewModel.getExercises())
                     viewModel.add(workout)
                     dismiss()
 
@@ -125,7 +134,7 @@ struct WorkoutCreateView: View {
             
         }
         .sheet(isPresented: $showSheet){
-            ExerciseView()
+            exerciseViewModel.exerciseView(viewModel: exerciseViewModel)
         }
     }
 }

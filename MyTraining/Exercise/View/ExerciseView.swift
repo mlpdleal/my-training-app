@@ -9,29 +9,80 @@ import SwiftUI
 
 struct ExerciseView: View {
     
+    @Environment(\.dismiss) var dismiss 
+    
     @State var name: String = ""
-    @State var reps: String? = nil
-    @State var weight: String? = nil
-    @State var rest: String? = nil
-    @State var series: String? = nil
-    @State var cadence: String? = nil
-    @State var description: String? = nil
+    @State var reps: String = ""
+    @State var weight: String = ""
+    @State var rest: String = ""
+    @State var series: String = ""
+    @State var cadence: String = ""
+    @State var description: String = ""
+    
+    @ObservedObject var viewModel: ExerciseViewModel
+    
+    init(viewModel: ExerciseViewModel){
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         NavigationView{
             Form{
-                makeTextField(label: "Name: ", text: name)
-                makeTextField(label: "Reps: ", text: reps ?? "0")
-                makeTextField(label: "Weight: ", text: weight ?? "0.0")
-                makeTextField(label: "Rest: ", text: rest ?? "0")
-                makeTextField(label: "Series: ", text: series ?? "0")
-                makeTextField(label: "Cadence: ", text: cadence ?? "0")
-                makeTextField(label: "Description: ", text: description ?? "0")
+                
+                HStack{
+                    Text("Name: ")
+                    Spacer()
+                    TextField("", text: $name)
+                        .multilineTextAlignment(.trailing)
+                }
+                
+                HStack{
+                    Text("Reps: ")
+                    Spacer()
+                    TextField("", text: $reps)
+                        .multilineTextAlignment(.trailing)
+                }
+                
+                HStack{
+                    Text("Weight: ")
+                    Spacer()
+                    TextField("", text: $weight)
+                        .multilineTextAlignment(.trailing)
+                }
+                                
+                HStack{
+                    Text("Rest: ")
+                    Spacer()
+                    TextField("", text: $rest)
+                        .multilineTextAlignment(.trailing)
+                }
+                
+                HStack{
+                    Text("Series: ")
+                    Spacer()
+                    TextField("", text: $series)
+                        .multilineTextAlignment(.trailing)
+                }
+
+                HStack{
+                    Text("Cadence: ")
+                    Spacer()
+                    TextField("", text: $cadence)
+                        .multilineTextAlignment(.trailing)
+                }
+                
+                HStack{
+                    Text("Description: ")
+                    Spacer()
+                    TextField("", text: $description)
+                        .multilineTextAlignment(.trailing)
+                }
                 
                 HStack(alignment: .center){
                     Spacer()
                     Button {
-                        
+                        viewModel.add(exercise: Exercise(id: UUID(), photo: nil, name: name, reps: reps, weight: weight, rest: rest, series: series, cadence: cadence, description: description))
+                        dismiss()
                     } label: {
                         Text("Save")
                             .foregroundColor(.accentColor)
@@ -47,20 +98,8 @@ struct ExerciseView: View {
     }
 }
 
-extension ExerciseView{
-    
-    func makeTextField(label: String, text: String) -> some View {
-        HStack{
-            Text(label)
-            Spacer()
-            TextField("", text: .constant(text))
-                .multilineTextAlignment(.trailing)
-        }
-    }
-}
-
 struct ExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseView()
+        ExerciseView(viewModel: ExerciseViewModel())
     }
 }
