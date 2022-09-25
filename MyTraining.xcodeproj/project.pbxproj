@@ -15,6 +15,9 @@
 		EA2E7B6228DF829300CB95F4 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6128DF829300CB95F4 /* ExerciseViewModel.swift */; };
 		EA2E7B6428DF84F000CB95F4 /* ExerciseViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6328DF84F000CB95F4 /* ExerciseViewRouter.swift */; };
 		EA2E7B6628DFB41C00CB95F4 /* ExerciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6528DFB41C00CB95F4 /* ExerciseCardView.swift */; };
+		EA2E7B6928E0E06F00CB95F4 /* ManagerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6828E0E06F00CB95F4 /* ManagerTime.swift */; };
+		EA2E7B6B28E0E16E00CB95F4 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6A28E0E16E00CB95F4 /* Mode.swift */; };
+		EA2E7B7128E0EF0900CB95F4 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7028E0EF0900CB95F4 /* HistoryModel.swift */; };
 		EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */; };
 		EA7BFD0428DCB0C500AE6E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */; };
 		EA7BFD0728DCB0C500AE6E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0628DCB0C500AE6E04 /* Preview Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		EA2E7B6128DF829300CB95F4 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		EA2E7B6328DF84F000CB95F4 /* ExerciseViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewRouter.swift; sourceTree = "<group>"; };
 		EA2E7B6528DFB41C00CB95F4 /* ExerciseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCardView.swift; sourceTree = "<group>"; };
+		EA2E7B6828E0E06F00CB95F4 /* ManagerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTime.swift; sourceTree = "<group>"; };
+		EA2E7B6A28E0E16E00CB95F4 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		EA2E7B7028E0EF0900CB95F4 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		EA7BFCFC28DCB0C300AE6E04 /* MyTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrainingApp.swift; sourceTree = "<group>"; };
 		EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +136,47 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		EA2E7B6728E0E05500CB95F4 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E7B6828E0E06F00CB95F4 /* ManagerTime.swift */,
+				EA2E7B6A28E0E16E00CB95F4 /* Mode.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		EA2E7B6C28E0EEC800CB95F4 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E7B6F28E0EEDC00CB95F4 /* Model */,
+				EA2E7B6E28E0EED500CB95F4 /* ViewModel */,
+				EA2E7B6D28E0EED000CB95F4 /* View */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		EA2E7B6D28E0EED000CB95F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA2E7B6E28E0EED500CB95F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EA2E7B6F28E0EEDC00CB95F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E7B7028E0EF0900CB95F4 /* HistoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EA7BFCF328DCB0C300AE6E04 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +197,7 @@
 		EA7BFCFE28DCB0C300AE6E04 /* MyTraining */ = {
 			isa = PBXGroup;
 			children = (
+				EA2E7B6C28E0EEC800CB95F4 /* History */,
 				EA2E7B5928DE7E4700CB95F4 /* Exercise */,
 				EACCF88228DCE6590058186C /* Common */,
 				EACCF87A28DCE0E80058186C /* Workout */,
@@ -314,6 +362,7 @@
 		EACCF88B28DCEEFF0058186C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				EA2E7B6728E0E05500CB95F4 /* Timer */,
 				EACCF88C28DCEF130058186C /* FileManager.swift */,
 				EA2E7B5728DE71AE00CB95F4 /* ImagePicker.swift */,
 			);
@@ -426,6 +475,8 @@
 				EA2E7B5828DE71AE00CB95F4 /* ImagePicker.swift in Sources */,
 				EA2E7B6028DF775000CB95F4 /* ExerciseView.swift in Sources */,
 				EACCF88A28DCEB2C0058186C /* HomeViewRouter.swift in Sources */,
+				EA2E7B7128E0EF0900CB95F4 /* HistoryModel.swift in Sources */,
+				EA2E7B6B28E0E16E00CB95F4 /* Mode.swift in Sources */,
 				EA7BFD1428DCB6A200AE6E04 /* SplashUIState.swift in Sources */,
 				EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */,
 				EACCF88D28DCEF130058186C /* FileManager.swift in Sources */,
@@ -442,6 +493,7 @@
 				EA2E7B5E28DE7E9800CB95F4 /* ExerciceModel.swift in Sources */,
 				EACCF88628DCE6A60058186C /* ButtonStyle.swift in Sources */,
 				EA7BFD1A28DCB9F100AE6E04 /* HomeView.swift in Sources */,
+				EA2E7B6928E0E06F00CB95F4 /* ManagerTime.swift in Sources */,
 				EA7BFD1628DCB70B00AE6E04 /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

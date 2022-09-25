@@ -12,6 +12,8 @@ struct WorkoutDetailView: View {
     @Binding var id: UUID
     @ObservedObject var viewModel: WorkoutViewModel
     
+    @ObservedObject var managerTime = ManagerTime()
+    
     @State private var isStarted: Bool = false
     
     var body: some View {
@@ -41,26 +43,81 @@ struct WorkoutDetailView: View {
                 .padding(.trailing, 5)
                 .padding(.top, 4)
                 .padding(.bottom, 4)
-                
             
-            Button{
-                self.isStarted.toggle()
-            } label: {
-                if isStarted {
-                    Label("Finish Routine", systemImage: "stop.circle")
-                        .font(.title)
-                        .bold()
-                } else {
-                    Label("Start Routine", systemImage: "play.circle")
-                        .font(.title)
-                        .bold()
+            switch managerTime.mode {
+            case .stopped:
+                withAnimation{
+                    Button{
+                        managerTime.start()
+                    } label: {
+                        Label("Start Routine", systemImage: "play.circle")
+                            .font(.title)
+                            .bold()
+                    }
                 }
-
+                
+            case .running:
+                HStack{
+                    withAnimation{
+                        Button{
+                            managerTime.stop()
+                        } label: {
+                            Label("Finish", systemImage: "stop.circle")
+                                .foregroundColor(.blue)
+                                .font(.title)
+                                .bold()
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    withAnimation{
+                        Button{
+                            managerTime.pause()
+                        } label: {
+                            Label("Pause", systemImage: "pause.circle")
+                                .font(.title)
+                                .foregroundColor(.yellow)
+                                .bold()
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                }
+                
+            case .paused:
+                HStack{
+                    withAnimation{
+                        Button{
+                            managerTime.stop()
+                        } label: {
+                            Label("Finish", systemImage: "stop.circle")
+                                .foregroundColor(.blue)
+                                .font(.title)
+                                .bold()
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                    withAnimation{
+                        Button{
+                            managerTime.start()
+                        } label: {
+                            
+                            Label("Continue", systemImage: "play.circle")
+                                .font(.title)
+                                .bold()
+                        }
+                        .padding(.horizontal)
+                    }
+                    
+                }
+                
             }
             
-            Text("00:00:00")
+            Text(managerTime.formatTime(counter: managerTime.secondElapsed))
+                .padding(.top, 2)
             
-           
+            Spacer()
                 List{
                     Section{
                     ForEach(viewModel.getWorkout(workoutId: id).exercises ?? []){ exercise in
@@ -89,14 +146,19 @@ struct WorkoutDetailView: View {
                                     .bold()
                                     .padding(.bottom, 2)
                                 VStack(alignment: .leading){
-                                    Text("Reps: \(exercise.reps!.isEmpty  ? "N/a" : exercise.reps!)")
-                                    Text("Weight: \(exercise.weight!.isEmpty  ? "N/a" : exercise.weight!)")
-                                    Text("Rest: \(exercise.rest!.isEmpty  ? "N/a" : exercise.rest!)")
-                                    Text("Series: \(exercise.series!.isEmpty  ? "N/a" : exercise.series!)")
-                                    Text("Cadence: \(exercise.cadence!.isEmpty  ? "N/a" : exercise.cadence!)")
-                                    Text("Description: \(exercise.description!.isEmpty  ? "N/a" : exercise.description!)")
-                                        .font(.callout)
-                                        .opacity(0.8)
+                                    Group{
+                                        Text("Reps: \(exercise.reps!.isEmpty  ? "N/a" : exercise.reps!)")
+                                        Text("Weight: \(exercise.weight!.isEmpty  ? "N/a" : exercise.weight!)")
+                                        Text("Rest: \(exercise.rest!.isEmpty  ? "N/a" : exercise.rest!)")
+                                        Text("Series: \(exercise.series!.isEmpty  ? "N/a" : exercise.series!)")
+                                        Text("Cadence: \(exercise.cadence!.isEmpty  ? "N/a" : exercise.cadence!)")
+                                        if !exercise.description!.isEmpty{
+                                            Text("Description: \(exercise.description!)")
+                                        }
+                                    }
+                                    .font(.callout)
+                                    .opacity(0.8)
+                                    
                                 }
                             }
                         }
