@@ -20,7 +20,7 @@ struct WorkoutCardView: View {
     
     var body: some View {
         ZStack(alignment: .trailing){
-            NavigationLink(destination: Text("WorkoutDetail"),
+            NavigationLink(destination: WorkoutDetailView(id: .constant(id), viewModel: workoutViewModel),
                            isActive: self.$action,
                            label: {
                                 EmptyView()
