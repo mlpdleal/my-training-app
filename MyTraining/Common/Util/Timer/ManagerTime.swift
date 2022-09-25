@@ -10,6 +10,7 @@ import SwiftUI
 class ManagerTime: ObservableObject{
     
     @Published var secondElapsed = 0.0
+    @Published var finalTime = 0.0
     @Published var mode: Mode = .stopped
     var timer = Timer()
     
@@ -22,6 +23,7 @@ class ManagerTime: ObservableObject{
     
     func stop() {
         timer.invalidate()
+        finalTime = secondElapsed
         secondElapsed = 0.0
         mode = .stopped
     }

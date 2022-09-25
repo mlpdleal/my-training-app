@@ -11,6 +11,7 @@ struct WorkoutDetailView: View {
     
     @Binding var id: UUID
     @ObservedObject var viewModel: WorkoutViewModel
+    @ObservedObject var historyViewModel = HistoryViewModel()
     
     @ObservedObject var managerTime = ManagerTime()
     
@@ -61,6 +62,9 @@ struct WorkoutDetailView: View {
                     withAnimation{
                         Button{
                             managerTime.stop()
+                            let history = History(id: UUID(), time: managerTime.formatTime(counter: managerTime.finalTime) , date: Date(), workout: viewModel.getWorkout(workoutId: id))
+                            historyViewModel.add(history)
+                            historyViewModel.historyListView(viewModel: historyViewModel)
                         } label: {
                             Label("Finish", systemImage: "stop.circle")
                                 .foregroundColor(.blue)
