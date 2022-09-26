@@ -9,14 +9,19 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     
-    let workoutViewModel = WorkoutViewModel()
+    @ObservedObject var workoutViewModel = WorkoutViewModel()
+    @ObservedObject var historyViewModel = HistoryViewModel()
     
 }
 
 extension HomeViewModel {
     
     func workoutView() -> some View {
-        return HomeViewRouter.makeWorkoutView(viewModel: workoutViewModel)
+        return HomeViewRouter.makeWorkoutView(viewModel: workoutViewModel, historyViewModel: historyViewModel)
+    }
+    
+    func historyView() -> some View {
+        return HomeViewRouter.makeHistoryView(viewModel: historyViewModel)
     }
     
 }

@@ -12,7 +12,7 @@ struct HomeView: View {
     @State var selection = 0
     
     @ObservedObject var viewModel = HomeViewModel()
-    @ObservedObject var historyViewModel = HistoryViewModel()
+    
     
     var body: some View {
         TabView(selection: $selection){
@@ -23,17 +23,19 @@ struct HomeView: View {
                 }
                 .tag(0)
             
-            historyViewModel.historyListView(viewModel: historyViewModel)
+            viewModel.historyView()
                 .tabItem{
                     Image(systemName: "clock.arrow.circlepath")
                     Text("History")
                 }
+                .tag(1)
             
             Text("Chart screen")
                 .tabItem{
                     Image(systemName: "chart.bar")
                     Text("Charts")
                 }
+                .tag(2)
             
         }
         .accentColor(.red)
