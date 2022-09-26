@@ -11,18 +11,40 @@ struct HistoryView: View {
     
     @ObservedObject var viewModel: HistoryViewModel
     
+    
+    
     init(viewModel: HistoryViewModel){
         self.viewModel = viewModel
     }
     
     var body: some View {
-        ScrollView(showsIndicators: false){
+        NavigationView{
             VStack{
-                ForEach(viewModel.getHistories()){ history in
-                    Text(history.time)
-                    Text(history.workout.name)
+                if viewModel.getHistories().isEmpty{
+                    EmptyListView()
+                } else{
+                    ScrollView(showsIndicators: false){
+                        VStack{
+                            ForEach(viewModel.getHistories()){ history in
+                                HistoryCardView(viewModel: HistoryCardViewModel(history: history))
+                            }
+                        }
+                        
+                    }
+                    
                 }
+                
+                Button{
+                    viewModel.deleteAll()
+                } label: {
+                    Label("Delete all histories", systemImage: "trash")
+                }
+                .modifier(ButtonStyle())
+                .padding(.horizontal, 16)
+                .padding(.bottom, 10)
+                
             }
+            .navigationTitle("History")
         }
     }
 }

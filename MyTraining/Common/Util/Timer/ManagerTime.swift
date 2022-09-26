@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 class ManagerTime: ObservableObject{
     
     @Published var secondElapsed = 0.0

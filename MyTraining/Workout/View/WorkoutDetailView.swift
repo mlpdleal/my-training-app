@@ -9,9 +9,11 @@ import SwiftUI
 
 struct WorkoutDetailView: View {
     
+    @Environment(\.dismiss) var dismiss
+    
     @Binding var id: UUID
     @ObservedObject var viewModel: WorkoutViewModel
-    @ObservedObject var historyViewModel = HistoryViewModel()
+    @ObservedObject var historyViewModel: HistoryViewModel
     
     @ObservedObject var managerTime = ManagerTime()
     
@@ -61,10 +63,7 @@ struct WorkoutDetailView: View {
                 HStack{
                     withAnimation{
                         Button{
-                            managerTime.stop()
-                            let history = History(id: UUID(), time: managerTime.formatTime(counter: managerTime.finalTime) , date: Date(), workout: viewModel.getWorkout(workoutId: id))
-                            historyViewModel.add(history)
-                            historyViewModel.historyListView(viewModel: historyViewModel)
+                            finish()
                         } label: {
                             Label("Finish", systemImage: "stop.circle")
                                 .foregroundColor(.blue)
@@ -92,7 +91,7 @@ struct WorkoutDetailView: View {
                 HStack{
                     withAnimation{
                         Button{
-                            managerTime.stop()
+                            finish()
                         } label: {
                             Label("Finish", systemImage: "stop.circle")
                                 .foregroundColor(.blue)
@@ -118,8 +117,10 @@ struct WorkoutDetailView: View {
                 
             }
             
-            Text(managerTime.formatTime(counter: managerTime.secondElapsed))
-                .padding(.top, 2)
+                Text(managerTime.formatTime(counter: managerTime.secondElapsed))
+                    .padding(.top, 2)
+            
+            
             
             Spacer()
                 List{
@@ -177,6 +178,13 @@ struct WorkoutDetailView: View {
             
             Spacer()
         }
+    }
+    
+    func finish() {
+        managerTime.stop()
+        let history = History(id: UUID(), time: managerTime.formatTime(counter: managerTime.finalTime) , date: Date(), workout: viewModel.getWorkout(workoutId: id))
+        historyViewModel.add(history)
+        dismiss()
     }
 }
 
