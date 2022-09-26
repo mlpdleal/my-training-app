@@ -19,8 +19,10 @@
 		EA2E7B6B28E0E16E00CB95F4 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6A28E0E16E00CB95F4 /* Mode.swift */; };
 		EA2E7B7128E0EF0900CB95F4 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7028E0EF0900CB95F4 /* HistoryModel.swift */; };
 		EA2E7B7328E0F90C00CB95F4 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7228E0F90C00CB95F4 /* HistoryViewModel.swift */; };
-		EA2E7B7528E0FBC500CB95F4 /* HistoryViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7428E0FBC500CB95F4 /* HistoryViewRouter.swift */; };
 		EA2E7B7728E0FC1F00CB95F4 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7628E0FC1F00CB95F4 /* HistoryView.swift */; };
+		EA2E7B7928E118F600CB95F4 /* HistoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7828E118F600CB95F4 /* HistoryCardView.swift */; };
+		EA2E7B7B28E129DE00CB95F4 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7A28E129DE00CB95F4 /* EmptyListView.swift */; };
+		EA2E7B7D28E13AC800CB95F4 /* HistoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7C28E13AC800CB95F4 /* HistoryCardViewModel.swift */; };
 		EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */; };
 		EA7BFD0428DCB0C500AE6E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */; };
 		EA7BFD0728DCB0C500AE6E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0628DCB0C500AE6E04 /* Preview Assets.xcassets */; };
@@ -64,8 +66,10 @@
 		EA2E7B6A28E0E16E00CB95F4 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		EA2E7B7028E0EF0900CB95F4 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		EA2E7B7228E0F90C00CB95F4 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
-		EA2E7B7428E0FBC500CB95F4 /* HistoryViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewRouter.swift; sourceTree = "<group>"; };
 		EA2E7B7628E0FC1F00CB95F4 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		EA2E7B7828E118F600CB95F4 /* HistoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardView.swift; sourceTree = "<group>"; };
+		EA2E7B7A28E129DE00CB95F4 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		EA2E7B7C28E13AC800CB95F4 /* HistoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardViewModel.swift; sourceTree = "<group>"; };
 		EA7BFCFC28DCB0C300AE6E04 /* MyTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrainingApp.swift; sourceTree = "<group>"; };
 		EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				EA2E7B7628E0FC1F00CB95F4 /* HistoryView.swift */,
+				EA2E7B7828E118F600CB95F4 /* HistoryCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				EA2E7B7228E0F90C00CB95F4 /* HistoryViewModel.swift */,
-				EA2E7B7428E0FBC500CB95F4 /* HistoryViewRouter.swift */,
+				EA2E7B7C28E13AC800CB95F4 /* HistoryCardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				EACCF88428DCE68B0058186C /* Modifier */,
+				EA2E7B7A28E129DE00CB95F4 /* EmptyListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -483,10 +489,10 @@
 				EA2E7B5628DE66E000CB95F4 /* WorkoutDetailView.swift in Sources */,
 				EA2E7B7728E0FC1F00CB95F4 /* HistoryView.swift in Sources */,
 				EA2E7B5828DE71AE00CB95F4 /* ImagePicker.swift in Sources */,
-				EA2E7B7528E0FBC500CB95F4 /* HistoryViewRouter.swift in Sources */,
 				EA2E7B6028DF775000CB95F4 /* ExerciseView.swift in Sources */,
 				EACCF88A28DCEB2C0058186C /* HomeViewRouter.swift in Sources */,
 				EA2E7B7128E0EF0900CB95F4 /* HistoryModel.swift in Sources */,
+				EA2E7B7928E118F600CB95F4 /* HistoryCardView.swift in Sources */,
 				EA2E7B6B28E0E16E00CB95F4 /* Mode.swift in Sources */,
 				EA7BFD1428DCB6A200AE6E04 /* SplashUIState.swift in Sources */,
 				EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */,
@@ -494,6 +500,7 @@
 				EACCF88F28DD08AB0058186C /* WorkoutModel.swift in Sources */,
 				EACCF88128DCE1790058186C /* WorkoutListView.swift in Sources */,
 				EA2E7B6428DF84F000CB95F4 /* ExerciseViewRouter.swift in Sources */,
+				EA2E7B7B28E129DE00CB95F4 /* EmptyListView.swift in Sources */,
 				EACCF87F28DCE13C0058186C /* HomeViewModel.swift in Sources */,
 				EA2E7B6228DF829300CB95F4 /* ExerciseViewModel.swift in Sources */,
 				EA2E7B6628DFB41C00CB95F4 /* ExerciseCardView.swift in Sources */,
@@ -506,6 +513,7 @@
 				EACCF88628DCE6A60058186C /* ButtonStyle.swift in Sources */,
 				EA7BFD1A28DCB9F100AE6E04 /* HomeView.swift in Sources */,
 				EA2E7B6928E0E06F00CB95F4 /* ManagerTime.swift in Sources */,
+				EA2E7B7D28E13AC800CB95F4 /* HistoryCardViewModel.swift in Sources */,
 				EA7BFD1628DCB70B00AE6E04 /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

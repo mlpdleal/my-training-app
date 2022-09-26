@@ -11,18 +11,52 @@ struct HistoryView: View {
     
     @ObservedObject var viewModel: HistoryViewModel
     
+    @State private var showingAlert: Bool = false
+    
     init(viewModel: HistoryViewModel){
         self.viewModel = viewModel
     }
     
     var body: some View {
-        ScrollView(showsIndicators: false){
+        NavigationView{
             VStack{
-                ForEach(viewModel.getHistories()){ history in
-                    Text(history.time)
-                    Text(history.workout.name)
+                if viewModel.getHistories().isEmpty{
+                    EmptyListView()
+                } else{
+                        VStack{
+                            List{
+                                ForEach(viewModel.getHistories().sorted{ $0.date > $1.date}){ history in
+                                    HistoryCardView(viewModel: HistoryCardViewModel(history: history))
+                                }
+                                
+                            }
+                        }
+                        
                 }
+                
+                Button{
+                    self.showingAlert = true
+                } label: {
+                    Label("Delete all histories", systemImage: "trash")
+                }
+                .modifier(ButtonStyle())
+                .padding(.horizontal, 16)
+                .padding(.bottom, 10)
+                .alert("Would you like delete all histories?", isPresented: $showingAlert){
+                    Button("Delete", role: .destructive) {
+                        viewModel.deleteAll()
+                    }
+                    
+                    Button(role: .cancel) {} label: {
+                        Text("Cancel")
+                        
+                    }
+                } message: {
+                    Text("All charts will be deleted too!")
+                }
+                
             }
+            .navigationTitle("History")
         }
     }
 }

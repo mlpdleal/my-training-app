@@ -38,14 +38,20 @@ class HistoryViewModel: ObservableObject {
         save()
     }
     
+    func deleteAll() {
+        objectWillChange.send()
+        histories.removeAll()
+        save()
+    }
+    
     func getHistories() -> [History] {
         return histories
     }
-}
-
-extension HistoryViewModel{
     
-    func historyListView(viewModel: HistoryViewModel) -> some View {
-        return HistoryViewRouter.makeHistoryListView(viewModel: viewModel)
+    func getHistory(historyId: UUID) -> History {
+        let index = histories.firstIndex{ $0.id == historyId }
+        return histories[index!]
     }
 }
+
+

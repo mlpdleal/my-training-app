@@ -18,9 +18,11 @@ struct WorkoutCardView: View {
     
     @ObservedObject var workoutViewModel: WorkoutViewModel
     
+    @ObservedObject var historyViewModel: HistoryViewModel
+    
     var body: some View {
         ZStack(alignment: .trailing){
-            NavigationLink(destination: WorkoutDetailView(id: .constant(id), viewModel: workoutViewModel),
+            NavigationLink(destination: WorkoutDetailView(id: .constant(id), viewModel: workoutViewModel, historyViewModel: historyViewModel),
                            isActive: self.$action,
                            label: {
                                 EmptyView()
@@ -100,6 +102,6 @@ struct WorkoutCardView_Previews: PreviewProvider {
         WorkoutCardView(id: .constant(UUID()),
                         photo: .constant(nil),
                         name: .constant("Upper Body Routine"),
-                        exercises: .constant([Exercise(id: UUID(), photo: nil, name: "Pull Up", reps: nil, weight: nil, rest: nil, series: nil, cadence: nil, description: nil)]), workoutViewModel: WorkoutViewModel() )
+                        exercises: .constant([Exercise(id: UUID(), photo: nil, name: "Pull Up", reps: nil, weight: nil, rest: nil, series: nil, cadence: nil, description: nil)]), workoutViewModel: WorkoutViewModel(), historyViewModel: HistoryViewModel() )
     }
 }
