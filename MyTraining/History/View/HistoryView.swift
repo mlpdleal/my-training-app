@@ -11,7 +11,7 @@ struct HistoryView: View {
     
     @ObservedObject var viewModel: HistoryViewModel
     
-    
+    @State private var showingAlert: Bool = false
     
     init(viewModel: HistoryViewModel){
         self.viewModel = viewModel
@@ -23,25 +23,37 @@ struct HistoryView: View {
                 if viewModel.getHistories().isEmpty{
                     EmptyListView()
                 } else{
-                    ScrollView(showsIndicators: false){
                         VStack{
-                            ForEach(viewModel.getHistories()){ history in
-                                HistoryCardView(viewModel: HistoryCardViewModel(history: history))
+                            List{
+                                ForEach(viewModel.getHistories().sorted{ $0.date > $1.date}){ history in
+                                    HistoryCardView(viewModel: HistoryCardViewModel(history: history))
+                                }
+                                
                             }
                         }
                         
-                    }
-                    
                 }
                 
                 Button{
-                    viewModel.deleteAll()
+                    self.showingAlert = true
                 } label: {
                     Label("Delete all histories", systemImage: "trash")
                 }
                 .modifier(ButtonStyle())
                 .padding(.horizontal, 16)
                 .padding(.bottom, 10)
+                .alert("Would you like delete all histories?", isPresented: $showingAlert){
+                    Button("Delete", role: .destructive) {
+                        viewModel.deleteAll()
+                    }
+                    
+                    Button(role: .cancel) {} label: {
+                        Text("Cancel")
+                        
+                    }
+                } message: {
+                    Text("All charts will be deleted too!")
+                }
                 
             }
             .navigationTitle("History")

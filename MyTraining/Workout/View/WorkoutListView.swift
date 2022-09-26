@@ -50,7 +50,7 @@ extension WorkoutListView {
                 .frame(width: 50, height: 50, alignment: .center)
                 .foregroundColor(.red)
             
-            Text("Workout now!")
+            Text("Training now!")
                 .font(.title.bold())
                 .foregroundColor(.red)
         }

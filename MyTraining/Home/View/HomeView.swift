@@ -28,12 +28,14 @@ struct HomeView: View {
                     Image(systemName: "clock.arrow.circlepath")
                     Text("History")
                 }
+                .tag(1)
             
             Text("Chart screen")
                 .tabItem{
                     Image(systemName: "chart.bar")
                     Text("Charts")
                 }
+                .tag(2)
             
         }
         .accentColor(.red)

@@ -46,6 +46,11 @@ struct HistoryCardView: View {
                             .font(.callout)
                             .opacity(0.8)
                             .padding(.bottom, 2)
+                        
+                        Text("\(viewModel.date.formatted(date: .abbreviated, time: .omitted))")
+                            .multilineTextAlignment(.leading)
+                            .font(.callout)
+                            .opacity(0.8)
                             
                         
                     }
@@ -59,12 +64,7 @@ struct HistoryCardView: View {
             .cornerRadius(4.0)
             
         }
-        .background(
-            RoundedRectangle(cornerRadius: 4.0)
-                .stroke(Color.red.opacity(0.5), lineWidth: 1.4)
-        )
-        .padding(.horizontal, 4)
-        .padding(.vertical, 4)
+
         
     }
 }
