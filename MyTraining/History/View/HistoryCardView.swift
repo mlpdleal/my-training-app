@@ -45,7 +45,6 @@ struct HistoryCardView: View {
                             .multilineTextAlignment(.leading)
                             .font(.callout)
                             .opacity(0.8)
-                            .padding(.bottom, 2)
                         
                         Text("\(viewModel.date.formatted(date: .abbreviated, time: .omitted))")
                             .multilineTextAlignment(.leading)
