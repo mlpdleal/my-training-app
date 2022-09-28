@@ -42,7 +42,7 @@ struct HistoryView: View {
                 .modifier(ButtonStyle())
                 .padding(.horizontal, 16)
                 .padding(.bottom, 10)
-                .alert("Would you like delete all histories?", isPresented: $showingAlert){
+                .alert("Would you like to delete all items?", isPresented: $showingAlert){
                     Button("Delete", role: .destructive) {
                         viewModel.deleteAll()
                     }
@@ -52,7 +52,7 @@ struct HistoryView: View {
                         
                     }
                 } message: {
-                    Text("All charts will be deleted too!")
+                    Text("All histories will be deleted!")
                 }
                 
             }

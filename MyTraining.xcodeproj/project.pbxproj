@@ -41,6 +41,9 @@
 		EACCF88D28DCEF130058186C /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACCF88C28DCEF130058186C /* FileManager.swift */; };
 		EACCF88F28DD08AB0058186C /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACCF88E28DD08AB0058186C /* WorkoutModel.swift */; };
 		EACCF89128DD0BF40058186C /* WorkoutCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACCF89028DD0BF40058186C /* WorkoutCreateView.swift */; };
+		EAE8DC3728E3438B00F46E9F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE8DC3628E3438B00F46E9F /* ChartView.swift */; };
+		EAE8DC3C28E35AFB00F46E9F /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE8DC3B28E35AFB00F46E9F /* ChartViewModel.swift */; };
+		EAE8DC3F28E3880E00F46E9F /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE8DC3E28E3880E00F46E9F /* ChartModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		EACCF88C28DCEF130058186C /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		EACCF88E28DD08AB0058186C /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		EACCF89028DD0BF40058186C /* WorkoutCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCreateView.swift; sourceTree = "<group>"; };
+		EAE8DC3628E3438B00F46E9F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		EAE8DC3B28E35AFB00F46E9F /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		EAE8DC3E28E3880E00F46E9F /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 		EA7BFCFE28DCB0C300AE6E04 /* MyTraining */ = {
 			isa = PBXGroup;
 			children = (
+				EAE8DC3428E3436600F46E9F /* Chart */,
 				EA2E7B6C28E0EEC800CB95F4 /* History */,
 				EA2E7B5928DE7E4700CB95F4 /* Exercise */,
 				EACCF88228DCE6590058186C /* Common */,
@@ -384,6 +391,41 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		EAE8DC3428E3436600F46E9F /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				EAE8DC3D28E387FC00F46E9F /* Model */,
+				EAE8DC3A28E346CC00F46E9F /* ViewModel */,
+				EAE8DC3528E3437200F46E9F /* View */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		EAE8DC3528E3437200F46E9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EAE8DC3628E3438B00F46E9F /* ChartView.swift */,
+			);
+			name = View;
+			path = "../New Group/View";
+			sourceTree = "<group>";
+		};
+		EAE8DC3A28E346CC00F46E9F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EAE8DC3B28E35AFB00F46E9F /* ChartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EAE8DC3D28E387FC00F46E9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAE8DC3E28E3880E00F46E9F /* ChartModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -507,9 +549,12 @@
 				EACCF88828DCE9E70058186C /* WorkoutViewModel.swift in Sources */,
 				EA7BFD1E28DCC9B200AE6E04 /* SplashViewRouter.swift in Sources */,
 				EA2E7B7328E0F90C00CB95F4 /* HistoryViewModel.swift in Sources */,
+				EAE8DC3728E3438B00F46E9F /* ChartView.swift in Sources */,
+				EAE8DC3C28E35AFB00F46E9F /* ChartViewModel.swift in Sources */,
 				EA9BB27828DDE4CD0093E742 /* WorkoutViewRouter.swift in Sources */,
 				EA7BFD1228DCB10800AE6E04 /* SplashView.swift in Sources */,
 				EA2E7B5E28DE7E9800CB95F4 /* ExerciceModel.swift in Sources */,
+				EAE8DC3F28E3880E00F46E9F /* ChartModel.swift in Sources */,
 				EACCF88628DCE6A60058186C /* ButtonStyle.swift in Sources */,
 				EA7BFD1A28DCB9F100AE6E04 /* HomeView.swift in Sources */,
 				EA2E7B6928E0E06F00CB95F4 /* ManagerTime.swift in Sources */,
