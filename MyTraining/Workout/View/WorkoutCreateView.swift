@@ -19,6 +19,7 @@ struct WorkoutCreateView: View {
     @State var photo: Data? = nil
     @State var name: String = ""
     @State var description: String = ""
+    @State private var isDisabled = false
  
     
     @ObservedObject var viewModel: WorkoutViewModel
@@ -40,26 +41,27 @@ struct WorkoutCreateView: View {
                     VStack {
                     
                         PhotosPicker(selection: $imagePicker.imageSelection){
-                            
-                            if let image = imagePicker.image {
-                                image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 320, height: 180)
-                            } else {
-                                Image(systemName: "camera.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 100)
-                                    .foregroundColor(.red)
+                            VStack{
+                                if let image = imagePicker.image {
+                                    image
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 320, height: 180)
+     
+                                } else {
+                                    Image(systemName: "camera.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 100, height: 100)
+                                        .foregroundColor(.red)
+                                    
+                                    Text("Click here to send")
+                                        .foregroundColor(.red)
+                                }
+                                
                             }
-                            
                         }
                         
-
-                        
-                        Text("Click here to send")
-                            .foregroundColor(.red)
                     }
                 }
                 .padding(.bottom, 12)
@@ -77,13 +79,12 @@ struct WorkoutCreateView: View {
                     Spacer()
                     VStack{
                         Image(systemName: "plus")
-                            .foregroundColor(.accentColor)
                             .font(.callout.bold())
                         
                         Text("Add exercise")
-                            .foregroundColor(.accentColor)
                             .font(.footnote)
                     }
+                    .foregroundColor(.blue)
                     .padding(.trailing, 20)
                     .padding(.vertical, 5)
                 }
@@ -109,15 +110,17 @@ struct WorkoutCreateView: View {
                     dismiss()
 
                 } label: {
+                    
                     Text("Save")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
                         .padding(.horizontal, 16)
                         .font(.title3.bold())
-                        .background(.red)
+                        .background(Color.accentColor)
                         .foregroundColor(.white)
                         .cornerRadius(4.0)
                 }
+                .disabled(name.count < 3)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
                 
@@ -128,6 +131,7 @@ struct WorkoutCreateView: View {
                         }
                     }
                 }
+                .foregroundColor(.blue)
                 .padding(.vertical, 8)
             }
            

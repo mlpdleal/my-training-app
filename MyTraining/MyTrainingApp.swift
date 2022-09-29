@@ -12,6 +12,7 @@ struct MyTrainingApp: App {
     var body: some Scene {
         WindowGroup {
             SplashView(viewModel: SplashViewModel())
+                .preferredColorScheme(.light)
         }
     }
 }

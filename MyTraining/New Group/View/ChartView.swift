@@ -14,9 +14,15 @@ struct ChartView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                ForEach(chartViewModel.getCharts()){ chart in
-                    ChartCardView(viewModel: ChartCardViewModel(chart: chart))
+                
+                if chartViewModel.getCharts().isEmpty {
+                    EmptyListView()
+                } else {
+                    ForEach(chartViewModel.getCharts()){ chart in
+                        ChartCardView(viewModel: ChartCardViewModel(chart: chart))
+                    }
                 }
+                
             }
             .padding()
             .navigationTitle("Statistics")

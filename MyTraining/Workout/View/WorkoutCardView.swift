@@ -72,6 +72,7 @@ struct WorkoutCardView: View {
                             
                             Button{
                                 workoutViewModel.deleteWorkout(workoutId: id)
+                                chartViewModel.deleteChart(chartId: chartViewModel.getChartByWorkoutId(workoutId: id).id)
                             } label: {
                                 Image(systemName: "trash")
                                     .foregroundColor(.red)

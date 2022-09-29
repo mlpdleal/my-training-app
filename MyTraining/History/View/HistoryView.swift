@@ -39,6 +39,7 @@ struct HistoryView: View {
                 } label: {
                     Label("Delete all histories", systemImage: "trash")
                 }
+                .disabled(viewModel.getHistories().isEmpty)
                 .modifier(ButtonStyle())
                 .padding(.horizontal, 16)
                 .padding(.bottom, 10)
