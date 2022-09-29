@@ -30,10 +30,10 @@ struct HomeView: View {
                 }
                 .tag(1)
             
-            Text("Chart screen")
+            viewModel.chartView()
                 .tabItem{
                     Image(systemName: "chart.bar")
-                    Text("Charts")
+                    Text("Statistics")
                 }
                 .tag(2)
             

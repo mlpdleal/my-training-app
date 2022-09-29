@@ -11,6 +11,7 @@ struct WorkoutListView: View {
     
     @ObservedObject var viewModel: WorkoutViewModel
     @ObservedObject var historyViewModel: HistoryViewModel
+    @ObservedObject var chartViewModel: ChartViewModel
     
     var body: some View {
         NavigationView{
@@ -20,7 +21,7 @@ struct WorkoutListView: View {
                 ScrollView(showsIndicators: false){
                     VStack{
                         ForEach(viewModel.getWorkouts()){ workout in
-                            WorkoutCardView(id: .constant(workout.id), photo: .constant(workout.imageData), name: .constant(workout.name), exercises: .constant(workout.exercises ?? []), workoutViewModel: viewModel, historyViewModel: historyViewModel)
+                            WorkoutCardView(id: .constant(workout.id), photo: .constant(workout.imageData), name: .constant(workout.name), exercises: .constant(workout.exercises ?? []), workoutViewModel: viewModel, historyViewModel: historyViewModel, chartViewModel: chartViewModel)
                                 .padding(.horizontal, 16)
                         }
                     }
@@ -36,7 +37,7 @@ struct WorkoutListView: View {
 
 struct WorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutListView(viewModel: WorkoutViewModel(), historyViewModel: HistoryViewModel())
+        WorkoutListView(viewModel: WorkoutViewModel(), historyViewModel: HistoryViewModel(), chartViewModel: ChartViewModel())
     }
 }
 

@@ -14,6 +14,7 @@ struct WorkoutDetailView: View {
     @Binding var id: UUID
     @ObservedObject var viewModel: WorkoutViewModel
     @ObservedObject var historyViewModel: HistoryViewModel
+    @ObservedObject var chartViewModel: ChartViewModel
     
     @ObservedObject var managerTime = ManagerTime()
     
@@ -184,6 +185,18 @@ struct WorkoutDetailView: View {
         managerTime.stop()
         let history = History(id: UUID(), time: managerTime.formatTime(counter: managerTime.finalTime) , date: Date(), workout: viewModel.getWorkout(workoutId: id))
         historyViewModel.add(history)
+        
+        if chartViewModel.isWorkoutExists(workoutId: history.workout.id) {
+            var chart = chartViewModel.getChartByWorkoutId(workoutId: history.workout.id)
+            chart.histories.append(history)
+            chartViewModel.updateChart(chartId: chart.id, chart: chart)
+        } else {
+            var histories: [History] = []
+            histories.append(history)
+            let chart = ChartModel(id: UUID(), workout: history.workout, histories: histories)
+            chartViewModel.add(chart)
+        }
+        
         dismiss()
     }
 }

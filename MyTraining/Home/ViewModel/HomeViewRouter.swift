@@ -10,12 +10,15 @@ import SwiftUI
 
 enum HomeViewRouter {
     
-    static func makeWorkoutView(viewModel: WorkoutViewModel, historyViewModel: HistoryViewModel) -> some View{
-        return WorkoutListView(viewModel: viewModel, historyViewModel: historyViewModel)
+    static func makeWorkoutView(viewModel: WorkoutViewModel, historyViewModel: HistoryViewModel, chartViewModel: ChartViewModel) -> some View{
+        return WorkoutListView(viewModel: viewModel, historyViewModel: historyViewModel, chartViewModel: chartViewModel)
     }
     
     static func makeHistoryView(viewModel: HistoryViewModel) -> some View {
         return HistoryView(viewModel: viewModel)
     }
     
+    static func makeChartView(chartViewModel: ChartViewModel) -> some View {
+        return ChartView(chartViewModel: chartViewModel)
+    }
 }

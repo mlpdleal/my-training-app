@@ -19,7 +19,7 @@ struct EmptyListView: View {
                     .frame(width: 100)
                     .padding(.bottom, 5)
                 
-                Text("No itens")
+                Text("No items")
                     .bold()
                 
                 Spacer()
