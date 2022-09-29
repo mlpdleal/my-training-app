@@ -15,24 +15,18 @@ struct ChartView: View {
     var body: some View {
         NavigationStack{
             VStack{
-                //AnimatedChart()
                 ForEach(chartViewModel.getCharts()){ chart in
-                    Text(chart.workout.name)
+                    ChartCardView(viewModel: ChartCardViewModel(chart: chart))
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .frame(alignment: .top)
             .padding()
-            .navigationTitle("Charts")
+            .navigationTitle("Statistics")
         }
     }
+}
     
-    @ViewBuilder func AnimatedChart() -> some View {
-//        Chart{
-//
-//            }
-        Text("Test")
-        }
-    }
+
 
 
 struct ChartView_Previews: PreviewProvider {

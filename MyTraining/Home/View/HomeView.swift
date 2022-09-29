@@ -33,7 +33,7 @@ struct HomeView: View {
             viewModel.chartView()
                 .tabItem{
                     Image(systemName: "chart.bar")
-                    Text("Charts")
+                    Text("Statistics")
                 }
                 .tag(2)
             
