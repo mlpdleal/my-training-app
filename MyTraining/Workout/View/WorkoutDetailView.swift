@@ -193,7 +193,7 @@ struct WorkoutDetailView: View {
         } else {
             var histories: [History] = []
             histories.append(history)
-            let chart = Chart(id: UUID(), workout: history.workout, histories: histories)
+            let chart = ChartModel(id: UUID(), workout: history.workout, histories: histories)
             chartViewModel.add(chart)
         }
         

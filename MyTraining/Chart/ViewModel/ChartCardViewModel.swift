@@ -13,7 +13,7 @@ struct ChartCardViewModel: Identifiable, Equatable{
     let workout: Workout
     let histories: [History]
     
-    init(chart: Chart){
+    init(chart: ChartModel){
         self.id = chart.id
         self.workout = chart.workout
         self.histories = chart.histories

@@ -23,10 +23,9 @@
 		EA2E7B7928E118F600CB95F4 /* HistoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7828E118F600CB95F4 /* HistoryCardView.swift */; };
 		EA2E7B7B28E129DE00CB95F4 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7A28E129DE00CB95F4 /* EmptyListView.swift */; };
 		EA2E7B7D28E13AC800CB95F4 /* HistoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7C28E13AC800CB95F4 /* HistoryCardViewModel.swift */; };
+		EA45904C28E52D0200BE9B27 /* ChartDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45904B28E52D0200BE9B27 /* ChartDetailView.swift */; };
 		EA595F4B28E517D700449635 /* ChartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA595F4A28E517D700449635 /* ChartCardView.swift */; };
-		EA595F4F28E5187C00449635 /* Extension+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA595F4E28E5187C00449635 /* Extension+Int.swift */; };
 		EA595F5128E5190100449635 /* ChartCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA595F5028E5190100449635 /* ChartCardViewModel.swift */; };
-		EA595F5328E51AFA00449635 /* ChartDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA595F5228E51AFA00449635 /* ChartDetailView.swift */; };
 		EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */; };
 		EA7BFD0428DCB0C500AE6E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */; };
 		EA7BFD0728DCB0C500AE6E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0628DCB0C500AE6E04 /* Preview Assets.xcassets */; };
@@ -77,10 +76,9 @@
 		EA2E7B7828E118F600CB95F4 /* HistoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardView.swift; sourceTree = "<group>"; };
 		EA2E7B7A28E129DE00CB95F4 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		EA2E7B7C28E13AC800CB95F4 /* HistoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardViewModel.swift; sourceTree = "<group>"; };
+		EA45904B28E52D0200BE9B27 /* ChartDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDetailView.swift; sourceTree = "<group>"; };
 		EA595F4A28E517D700449635 /* ChartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCardView.swift; sourceTree = "<group>"; };
-		EA595F4E28E5187C00449635 /* Extension+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Int.swift"; sourceTree = "<group>"; };
 		EA595F5028E5190100449635 /* ChartCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCardViewModel.swift; sourceTree = "<group>"; };
-		EA595F5228E51AFA00449635 /* ChartDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDetailView.swift; sourceTree = "<group>"; };
 		EA7BFCFC28DCB0C300AE6E04 /* MyTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrainingApp.swift; sourceTree = "<group>"; };
 		EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -395,7 +393,6 @@
 				EA2E7B6728E0E05500CB95F4 /* Timer */,
 				EACCF88C28DCEF130058186C /* FileManager.swift */,
 				EA2E7B5728DE71AE00CB95F4 /* ImagePicker.swift */,
-				EA595F4E28E5187C00449635 /* Extension+Int.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -415,7 +412,7 @@
 			children = (
 				EAE8DC3628E3438B00F46E9F /* ChartView.swift */,
 				EA595F4A28E517D700449635 /* ChartCardView.swift */,
-				EA595F5228E51AFA00449635 /* ChartDetailView.swift */,
+				EA45904B28E52D0200BE9B27 /* ChartDetailView.swift */,
 			);
 			name = View;
 			path = "../New Group/View";
@@ -557,9 +554,9 @@
 				EACCF88128DCE1790058186C /* WorkoutListView.swift in Sources */,
 				EA2E7B6428DF84F000CB95F4 /* ExerciseViewRouter.swift in Sources */,
 				EA2E7B7B28E129DE00CB95F4 /* EmptyListView.swift in Sources */,
+				EA45904C28E52D0200BE9B27 /* ChartDetailView.swift in Sources */,
 				EACCF87F28DCE13C0058186C /* HomeViewModel.swift in Sources */,
 				EA2E7B6228DF829300CB95F4 /* ExerciseViewModel.swift in Sources */,
-				EA595F4F28E5187C00449635 /* Extension+Int.swift in Sources */,
 				EA2E7B6628DFB41C00CB95F4 /* ExerciseCardView.swift in Sources */,
 				EACCF88828DCE9E70058186C /* WorkoutViewModel.swift in Sources */,
 				EA7BFD1E28DCC9B200AE6E04 /* SplashViewRouter.swift in Sources */,
@@ -572,7 +569,6 @@
 				EAE8DC3F28E3880E00F46E9F /* ChartModel.swift in Sources */,
 				EACCF88628DCE6A60058186C /* ButtonStyle.swift in Sources */,
 				EA7BFD1A28DCB9F100AE6E04 /* HomeView.swift in Sources */,
-				EA595F5328E51AFA00449635 /* ChartDetailView.swift in Sources */,
 				EA2E7B6928E0E06F00CB95F4 /* ManagerTime.swift in Sources */,
 				EA2E7B7D28E13AC800CB95F4 /* HistoryCardViewModel.swift in Sources */,
 				EA7BFD1628DCB70B00AE6E04 /* SplashViewModel.swift in Sources */,

@@ -15,7 +15,7 @@ struct ChartCardView: View {
     
     var body: some View {
         ZStack(alignment: .trailing){
-            NavigationLink(destination: ChartDetailView(),
+            NavigationLink(destination: ChartDetailView(histories: viewModel.histories),
                            isActive: self.$action,
                            label: {
                                 EmptyView()
@@ -87,7 +87,7 @@ struct ChartCardView_Previews: PreviewProvider {
     static var previews: some View {
         ChartCardView(viewModel:
                         ChartCardViewModel(chart:
-                                            Chart(id: UUID(),
+                                            ChartModel(id: UUID(),
                                                   workout: Workout(id: UUID(),
                                                                    name: "Upper body routine",
                                                                    description: "Test routine",

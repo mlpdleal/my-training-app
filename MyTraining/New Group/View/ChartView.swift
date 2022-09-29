@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Charts
 
 struct ChartView: View {
     
@@ -19,9 +18,9 @@ struct ChartView: View {
                     ChartCardView(viewModel: ChartCardViewModel(chart: chart))
                 }
             }
-            .frame(alignment: .top)
             .padding()
             .navigationTitle("Statistics")
+            Spacer()
         }
     }
 }

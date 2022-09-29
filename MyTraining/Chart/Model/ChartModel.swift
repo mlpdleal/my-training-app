@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Chart: Codable, Hashable, Identifiable {
+struct ChartModel: Codable, Hashable, Identifiable {
     
     let id: UUID
     let workout: Workout

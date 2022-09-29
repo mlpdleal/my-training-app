@@ -10,14 +10,14 @@ import SwiftUI
 
 class ChartViewModel: ObservableObject{
     
-    @Published private var charts: [Chart]
+    @Published private var charts: [ChartModel]
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("Charts")
     
     init(){
         do{
             let data = try Data(contentsOf: savePath)
-            charts = try JSONDecoder().decode([Chart].self, from: data)
+            charts = try JSONDecoder().decode([ChartModel].self, from: data)
         } catch {
             charts = []
         }
@@ -46,7 +46,7 @@ class ChartViewModel: ObservableObject{
         }
     }
     
-    func add(_ chart: Chart){
+    func add(_ chart: ChartModel){
         objectWillChange.send()
         charts.append(chart)
         save()
@@ -58,7 +58,7 @@ class ChartViewModel: ObservableObject{
         save()
     }
     
-    func getCharts() -> [Chart] {
+    func getCharts() -> [ChartModel] {
         return charts
     }
     
@@ -74,17 +74,17 @@ class ChartViewModel: ObservableObject{
         return charts.contains { $0.workout.id == workoutId }
     }
     
-    func getChart(chartId: UUID) -> Chart {
+    func getChart(chartId: UUID) -> ChartModel {
         let index = getChartIndex(chartId: chartId)
         return charts[index]
     }
     
-    func getChartByWorkoutId(workoutId: UUID) -> Chart {
+    func getChartByWorkoutId(workoutId: UUID) -> ChartModel {
         let index = getChartIndex(workoutId: workoutId)
         return charts[index]
     }
     
-    func updateChart(chartId: UUID, chart: Chart) {
+    func updateChart(chartId: UUID, chart: ChartModel) {
         let index = getChartIndex(chartId: chartId)
         charts[index] = chart
         save()
