@@ -28,7 +28,7 @@ struct ChartDetailView: View {
     func animateChart() -> some View {
         Chart{
             ForEach(histories){ history in
-                LineMark(x: .value("Day", history.date, unit: .day),
+                BarMark(x: .value("Day", history.date, unit: .day),
                         y: .value("Amount Seconds", timeToInt(time: history.time)))
                 
             }
