@@ -20,7 +20,7 @@ struct WorkoutCreateView: View {
     @State var name: String = ""
     @State var description: String = ""
     @State private var isDisabled = false
- 
+    @State private var showingAlert = false
     
     @ObservedObject var viewModel: WorkoutViewModel
     
@@ -101,13 +101,18 @@ struct WorkoutCreateView: View {
                 
                 Button{
                     
-                    if let image = imagePicker.imageData {
-                        self.photo = image
+                    if viewModel.isWorkoutExists(workoutName: name){
+                        self.showingAlert = true
+                    } else {
+                        if let image = imagePicker.imageData {
+                            self.photo = image
+                        }
+                        
+                        let workout = Workout(id: UUID(), name: name, description: description, imageData: photo, exercises: exerciseViewModel.getExercises())
+                        viewModel.add(workout)
+                        dismiss()
                     }
                     
-                    let workout = Workout(id: UUID(), name: name, description: description, imageData: photo, exercises: exerciseViewModel.getExercises())
-                    viewModel.add(workout)
-                    dismiss()
 
                 } label: {
                     
@@ -136,6 +141,11 @@ struct WorkoutCreateView: View {
             }
            
             
+        }
+        .alert("Workour routine already exists!", isPresented: $showingAlert){
+            Button("Ok") { }
+        } message : {
+            Text("Try again with another workout name.")
         }
         .sheet(isPresented: $showSheet){
             exerciseViewModel.exerciseView(viewModel: exerciseViewModel)
