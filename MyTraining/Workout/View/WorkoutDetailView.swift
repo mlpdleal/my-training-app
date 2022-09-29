@@ -42,7 +42,7 @@ struct WorkoutDetailView: View {
             }
             .padding(.horizontal, 3)
             
-            Text(viewModel.getWorkout(workoutId: id).description)
+            Text(viewModel.getWorkout(workoutId: id).description ?? "No description.")
                 .font(.callout)
                 .padding(.trailing, 5)
                 .padding(.top, 4)

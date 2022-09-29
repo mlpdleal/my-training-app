@@ -84,6 +84,12 @@ class ChartViewModel: ObservableObject{
         return charts[index]
     }
     
+    func deleteChart(chartId: UUID){
+        let index = getChartIndex(chartId: chartId)
+        charts.remove(at: index)
+        save()
+    }
+    
     func updateChart(chartId: UUID, chart: ChartModel) {
         let index = getChartIndex(chartId: chartId)
         charts[index] = chart

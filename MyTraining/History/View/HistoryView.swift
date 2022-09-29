@@ -34,25 +34,27 @@ struct HistoryView: View {
                         
                 }
                 
-                Button{
-                    self.showingAlert = true
-                } label: {
-                    Label("Delete all histories", systemImage: "trash")
-                }
-                .modifier(ButtonStyle())
-                .padding(.horizontal, 16)
-                .padding(.bottom, 10)
-                .alert("Would you like to delete all items?", isPresented: $showingAlert){
-                    Button("Delete", role: .destructive) {
-                        viewModel.deleteAll()
+                if !viewModel.getHistories().isEmpty{
+                    Button{
+                        self.showingAlert = true
+                    } label: {
+                        Label("Delete all histories", systemImage: "trash")
                     }
-                    
-                    Button(role: .cancel) {} label: {
-                        Text("Cancel")
+                    .modifier(ButtonStyle())
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 10)
+                    .alert("Would you like to delete all items?", isPresented: $showingAlert){
+                        Button("Delete", role: .destructive) {
+                            viewModel.deleteAll()
+                        }
                         
+                        Button(role: .cancel) {} label: {
+                            Text("Cancel")
+                            
+                        }
+                    } message: {
+                        Text("All histories will be deleted!")
                     }
-                } message: {
-                    Text("All histories will be deleted!")
                 }
                 
             }

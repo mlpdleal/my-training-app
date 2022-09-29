@@ -115,7 +115,7 @@ struct ExerciseView: View {
                 HStack(alignment: .center){
                     Spacer()
                     Button {
-                        
+                    
                         if let image = imagePicker.imageData {
                             self.photo = image
                         }
@@ -126,6 +126,7 @@ struct ExerciseView: View {
                         Text("Save")
                             .foregroundColor(.accentColor)
                     }
+                    .disabled(name.isEmpty)
                     Spacer()
                 }
             
