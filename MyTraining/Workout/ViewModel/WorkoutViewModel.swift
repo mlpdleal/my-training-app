@@ -43,6 +43,10 @@ extension WorkoutViewModel {
         return workouts[index!]
     }
     
+    func isWorkoutExists(workoutName: String) -> Bool {
+        return workouts.contains { $0.name == workoutName }
+    }
+    
     func deleteWorkout(workoutId: UUID) {
         
         let index = workouts.firstIndex{ $0.id == workoutId }
