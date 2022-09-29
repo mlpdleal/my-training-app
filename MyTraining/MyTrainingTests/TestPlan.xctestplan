@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "E0770A28-7291-4000-8948-0959183840CA",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:MyTraining.xcodeproj",
+        "identifier" : "EA9BB27C28DDF6130093E742",
+        "name" : "MyTrainingTests"
+      }
+    }
+  ],
+  "version" : 1
+}
