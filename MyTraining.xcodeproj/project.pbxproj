@@ -23,6 +23,9 @@
 		EA2E7B7928E118F600CB95F4 /* HistoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7828E118F600CB95F4 /* HistoryCardView.swift */; };
 		EA2E7B7B28E129DE00CB95F4 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7A28E129DE00CB95F4 /* EmptyListView.swift */; };
 		EA2E7B7D28E13AC800CB95F4 /* HistoryCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7C28E13AC800CB95F4 /* HistoryCardViewModel.swift */; };
+		EA45904C28E52D0200BE9B27 /* ChartDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA45904B28E52D0200BE9B27 /* ChartDetailView.swift */; };
+		EA595F4B28E517D700449635 /* ChartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA595F4A28E517D700449635 /* ChartCardView.swift */; };
+		EA595F5128E5190100449635 /* ChartCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA595F5028E5190100449635 /* ChartCardViewModel.swift */; };
 		EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */; };
 		EA7BFD0428DCB0C500AE6E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */; };
 		EA7BFD0728DCB0C500AE6E04 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7BFD0628DCB0C500AE6E04 /* Preview Assets.xcassets */; };
@@ -41,6 +44,9 @@
 		EACCF88D28DCEF130058186C /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACCF88C28DCEF130058186C /* FileManager.swift */; };
 		EACCF88F28DD08AB0058186C /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACCF88E28DD08AB0058186C /* WorkoutModel.swift */; };
 		EACCF89128DD0BF40058186C /* WorkoutCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACCF89028DD0BF40058186C /* WorkoutCreateView.swift */; };
+		EAE8DC3728E3438B00F46E9F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE8DC3628E3438B00F46E9F /* ChartView.swift */; };
+		EAE8DC3C28E35AFB00F46E9F /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE8DC3B28E35AFB00F46E9F /* ChartViewModel.swift */; };
+		EAE8DC3F28E3880E00F46E9F /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE8DC3E28E3880E00F46E9F /* ChartModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +76,9 @@
 		EA2E7B7828E118F600CB95F4 /* HistoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardView.swift; sourceTree = "<group>"; };
 		EA2E7B7A28E129DE00CB95F4 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		EA2E7B7C28E13AC800CB95F4 /* HistoryCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCardViewModel.swift; sourceTree = "<group>"; };
+		EA45904B28E52D0200BE9B27 /* ChartDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDetailView.swift; sourceTree = "<group>"; };
+		EA595F4A28E517D700449635 /* ChartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCardView.swift; sourceTree = "<group>"; };
+		EA595F5028E5190100449635 /* ChartCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCardViewModel.swift; sourceTree = "<group>"; };
 		EA7BFCFC28DCB0C300AE6E04 /* MyTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTrainingApp.swift; sourceTree = "<group>"; };
 		EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +99,9 @@
 		EACCF88C28DCEF130058186C /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		EACCF88E28DD08AB0058186C /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		EACCF89028DD0BF40058186C /* WorkoutCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCreateView.swift; sourceTree = "<group>"; };
+		EAE8DC3628E3438B00F46E9F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		EAE8DC3B28E35AFB00F46E9F /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		EAE8DC3E28E3880E00F46E9F /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +223,7 @@
 		EA7BFCFE28DCB0C300AE6E04 /* MyTraining */ = {
 			isa = PBXGroup;
 			children = (
+				EAE8DC3428E3436600F46E9F /* Chart */,
 				EA2E7B6C28E0EEC800CB95F4 /* History */,
 				EA2E7B5928DE7E4700CB95F4 /* Exercise */,
 				EACCF88228DCE6590058186C /* Common */,
@@ -384,6 +397,44 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		EAE8DC3428E3436600F46E9F /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				EAE8DC3D28E387FC00F46E9F /* Model */,
+				EAE8DC3A28E346CC00F46E9F /* ViewModel */,
+				EAE8DC3528E3437200F46E9F /* View */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		EAE8DC3528E3437200F46E9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EAE8DC3628E3438B00F46E9F /* ChartView.swift */,
+				EA595F4A28E517D700449635 /* ChartCardView.swift */,
+				EA45904B28E52D0200BE9B27 /* ChartDetailView.swift */,
+			);
+			name = View;
+			path = "../New Group/View";
+			sourceTree = "<group>";
+		};
+		EAE8DC3A28E346CC00F46E9F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EAE8DC3B28E35AFB00F46E9F /* ChartViewModel.swift */,
+				EA595F5028E5190100449635 /* ChartCardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EAE8DC3D28E387FC00F46E9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAE8DC3E28E3880E00F46E9F /* ChartModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -491,25 +542,31 @@
 				EA2E7B5828DE71AE00CB95F4 /* ImagePicker.swift in Sources */,
 				EA2E7B6028DF775000CB95F4 /* ExerciseView.swift in Sources */,
 				EACCF88A28DCEB2C0058186C /* HomeViewRouter.swift in Sources */,
+				EA595F5128E5190100449635 /* ChartCardViewModel.swift in Sources */,
 				EA2E7B7128E0EF0900CB95F4 /* HistoryModel.swift in Sources */,
 				EA2E7B7928E118F600CB95F4 /* HistoryCardView.swift in Sources */,
 				EA2E7B6B28E0E16E00CB95F4 /* Mode.swift in Sources */,
 				EA7BFD1428DCB6A200AE6E04 /* SplashUIState.swift in Sources */,
 				EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */,
 				EACCF88D28DCEF130058186C /* FileManager.swift in Sources */,
+				EA595F4B28E517D700449635 /* ChartCardView.swift in Sources */,
 				EACCF88F28DD08AB0058186C /* WorkoutModel.swift in Sources */,
 				EACCF88128DCE1790058186C /* WorkoutListView.swift in Sources */,
 				EA2E7B6428DF84F000CB95F4 /* ExerciseViewRouter.swift in Sources */,
 				EA2E7B7B28E129DE00CB95F4 /* EmptyListView.swift in Sources */,
+				EA45904C28E52D0200BE9B27 /* ChartDetailView.swift in Sources */,
 				EACCF87F28DCE13C0058186C /* HomeViewModel.swift in Sources */,
 				EA2E7B6228DF829300CB95F4 /* ExerciseViewModel.swift in Sources */,
 				EA2E7B6628DFB41C00CB95F4 /* ExerciseCardView.swift in Sources */,
 				EACCF88828DCE9E70058186C /* WorkoutViewModel.swift in Sources */,
 				EA7BFD1E28DCC9B200AE6E04 /* SplashViewRouter.swift in Sources */,
 				EA2E7B7328E0F90C00CB95F4 /* HistoryViewModel.swift in Sources */,
+				EAE8DC3728E3438B00F46E9F /* ChartView.swift in Sources */,
+				EAE8DC3C28E35AFB00F46E9F /* ChartViewModel.swift in Sources */,
 				EA9BB27828DDE4CD0093E742 /* WorkoutViewRouter.swift in Sources */,
 				EA7BFD1228DCB10800AE6E04 /* SplashView.swift in Sources */,
 				EA2E7B5E28DE7E9800CB95F4 /* ExerciceModel.swift in Sources */,
+				EAE8DC3F28E3880E00F46E9F /* ChartModel.swift in Sources */,
 				EACCF88628DCE6A60058186C /* ButtonStyle.swift in Sources */,
 				EA7BFD1A28DCB9F100AE6E04 /* HomeView.swift in Sources */,
 				EA2E7B6928E0E06F00CB95F4 /* ManagerTime.swift in Sources */,
