@@ -66,6 +66,11 @@ struct WorkoutCreateView: View {
                 }
                 .padding(.bottom, 12)
             }
+            .alert("Workour routine already exists!", isPresented: $showingAlert){
+                Button("Ok") { }
+            } message : {
+                Text("Try again with another workout name.")
+            }
             
             VStack{
                 makeTextField("Type here the name of the workout", text: $name)
@@ -93,7 +98,7 @@ struct WorkoutCreateView: View {
             
             VStack{
                 ForEach(exerciseViewModel.getExercises()){ exercise in
-                    ExerciseCardView(id: .constant(exercise.id), photo: .constant(exercise.photo), name: .constant(exercise.name), viewModel: exerciseViewModel)
+                        ExerciseCardView(id: .constant(exercise.id), photo: .constant(exercise.photo), name: .constant(exercise.name), viewModel: exerciseViewModel)
                 }
             }
             
@@ -141,11 +146,6 @@ struct WorkoutCreateView: View {
             }
            
             
-        }
-        .alert("Workour routine already exists!", isPresented: $showingAlert){
-            Button("Ok") { }
-        } message : {
-            Text("Try again with another workout name.")
         }
         .sheet(isPresented: $showSheet){
             exerciseViewModel.exerciseView(viewModel: exerciseViewModel)
