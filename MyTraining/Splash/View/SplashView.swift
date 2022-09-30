@@ -29,16 +29,27 @@ struct SplashView: View {
 extension SplashView {
     func loadingView() -> some View {
         ZStack{
-            Image("logo")
-                .resizable()
-                .ignoresSafeArea()
-                .scaledToFill()
             
-            Text("Created by: Manoel Leal")
-                .foregroundColor(.white)
-                .padding(.top, 600)
+            LinearGradient(colors: [.red, .red, .white], startPoint: .top, endPoint: .bottom)
+            
+            VStack{
+                Spacer()
+                Spacer()
+                Image(systemName: "t.square.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.white)
+                    .frame(width: 200)
+                
+                Spacer()
+                Text("Created by: Manoel Leal")
+                   .foregroundColor(.white)
+                
+                Spacer()
+            }
                
         }
+        .ignoresSafeArea()
     }
 }
 

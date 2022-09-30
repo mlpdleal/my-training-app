@@ -126,9 +126,11 @@ struct WorkoutCreateView: View {
                         .padding(.vertical, 14)
                         .padding(.horizontal, 16)
                         .font(.title3.bold())
-                        .background(Color.accentColor)
+                        .background(.red)
+                        .opacity(name.count < 3 ? 0.7 : 1.0)
                         .foregroundColor(.white)
                         .cornerRadius(4.0)
+                    
                 }
                 .disabled(name.count < 3)
                 .padding(.horizontal, 16)

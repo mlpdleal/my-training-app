@@ -10,6 +10,7 @@ import SwiftUI
 
 class ManagerTime: ObservableObject{
     
+    var scenePhase: ScenePhase?
     @Published var secondElapsed = 0.0
     @Published var finalTime = 0.0
     @Published var mode: Mode = .stopped
@@ -18,7 +19,13 @@ class ManagerTime: ObservableObject{
     func start() {
         mode = .running
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.secondElapsed += 1.0
+            if self.scenePhase == .background{
+                self.secondElapsed += 1.0
+            } else if self.scenePhase == .inactive {
+                self.secondElapsed += 1.0
+            } else {
+                self.secondElapsed += 1.0
+            }
         }
     }
     
@@ -38,7 +45,6 @@ class ManagerTime: ObservableObject{
         let hours = Int((counter*24).truncatingRemainder(dividingBy: 24))
         let minutes = Int((counter/60).truncatingRemainder(dividingBy: 60))
         let seconds = Int(counter.truncatingRemainder(dividingBy: 60))
-        let milliseconds = Int((counter*1000).truncatingRemainder(dividingBy: 1000))
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
 }

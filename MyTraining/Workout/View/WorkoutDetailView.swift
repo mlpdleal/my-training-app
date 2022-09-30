@@ -11,6 +11,8 @@ struct WorkoutDetailView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    @Environment(\.scenePhase) var scenePhase
+    
     @Binding var id: UUID
     @ObservedObject var viewModel: WorkoutViewModel
     @ObservedObject var historyViewModel: HistoryViewModel
@@ -19,7 +21,7 @@ struct WorkoutDetailView: View {
     @ObservedObject var managerTime = ManagerTime()
     
     @State private var isStarted: Bool = false
-    
+        
     var body: some View {
         
         VStack{
@@ -118,11 +120,11 @@ struct WorkoutDetailView: View {
                 
             }
             
+            
                 Text(managerTime.formatTime(counter: managerTime.secondElapsed))
-                    .padding(.top, 2)
-            
-            
-            
+                .padding(.top, 2)
+     
+
             Spacer()
                 List{
                     Section{
@@ -179,6 +181,10 @@ struct WorkoutDetailView: View {
             
             Spacer()
         }
+        .onChange(of: scenePhase){
+            self.managerTime.scenePhase = $0
+        }
+  
     }
     
     func finish() {

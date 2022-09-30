@@ -124,7 +124,8 @@ struct ExerciseView: View {
                         dismiss()
                     } label: {
                         Text("Save")
-                            .foregroundColor(.accentColor)
+                            .foregroundColor(.blue)
+                            .opacity(name.isEmpty ? 0.7 : 1.0)
                     }
                     .disabled(name.isEmpty)
                     Spacer()
