@@ -21,7 +21,7 @@ struct WorkoutListView: View {
                 ScrollView(showsIndicators: false){
                     VStack{
                         ForEach(viewModel.getWorkouts()){ workout in
-                            WorkoutCardView(id: .constant(workout.id), photo: .constant(workout.imageData), name: .constant(workout.name), exercises: .constant(workout.exercises ?? []), workoutViewModel: viewModel, historyViewModel: historyViewModel, chartViewModel: chartViewModel)
+                            WorkoutCardView(workoutCardViewModel: WorkoutCardViewModel(workout: workout), workoutViewModel: viewModel, historyViewModel: historyViewModel, chartViewModel: chartViewModel)
                                 .padding(.horizontal, 16)
                         }
                     }
