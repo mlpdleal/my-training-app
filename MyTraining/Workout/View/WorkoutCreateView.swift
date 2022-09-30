@@ -24,7 +24,7 @@ struct WorkoutCreateView: View {
     
     @ObservedObject var viewModel: WorkoutViewModel
     
-    @ObservedObject var exerciseViewModel = ExerciseViewModel()
+    @StateObject var exerciseViewModel = ExerciseViewModel()
     
     @StateObject var imagePicker = ImagePicker()
     
