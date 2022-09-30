@@ -17,14 +17,15 @@ struct WorkoutDetailView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    @Environment(\.scenePhase) var scenePhase
+    let workoutCardViewModel: WorkoutCardViewModel
     
-    @Binding var id: UUID
     @ObservedObject var viewModel: WorkoutViewModel
     @ObservedObject var historyViewModel: HistoryViewModel
     @ObservedObject var chartViewModel: ChartViewModel
     
     @ObservedObject var managerTimer = ManagerTimer()
+    
+    
     
     @State private var isStarted: Bool = false
     @State private var mode: Mode = .stopped
@@ -32,7 +33,7 @@ struct WorkoutDetailView: View {
     var body: some View {
         
         VStack{
-            if let image = viewModel.getWorkout(workoutId: id).imageData {
+            if let image = workoutCardViewModel.imageData {
                 Image(uiImage: UIImage(data: image)!)
                     .resizable()
                     .scaledToFit()
@@ -44,14 +45,14 @@ struct WorkoutDetailView: View {
             }
             
             HStack(alignment: .center){
-                Text(viewModel.getWorkout(workoutId: id).name)
+                Text(workoutCardViewModel.name)
                     .foregroundColor(.red)
                     .bold()
                     .multilineTextAlignment(.center)
             }
             .padding(.horizontal, 3)
             
-            Text(viewModel.getWorkout(workoutId: id).description ?? "No description.")
+            Text(workoutCardViewModel.description ?? "No description.")
                 .font(.callout)
                 .padding(.trailing, 5)
                 .padding(.top, 4)
@@ -140,7 +141,7 @@ struct WorkoutDetailView: View {
             Spacer()
                 List{
                     Section{
-                    ForEach(viewModel.getWorkout(workoutId: id).exercises ?? []){ exercise in
+                        ForEach(workoutCardViewModel.exercises ?? []){ exercise in
                         
                         
                         HStack{
@@ -199,7 +200,7 @@ struct WorkoutDetailView: View {
     
     func finish() {
         managerTimer.reset()
-        let history = History(id: UUID(), time: timeString(accumulatedTime: managerTimer.finishAccumulatedTime) , date: Date(), workout: viewModel.getWorkout(workoutId: id))
+        let history = History(id: UUID(), time: timeString(accumulatedTime: managerTimer.finishAccumulatedTime) , date: Date(), workout: viewModel.getWorkout(workoutId: workoutCardViewModel.id))
         historyViewModel.add(history)
         
         if chartViewModel.isWorkoutExists(workoutId: history.workout.id) {
