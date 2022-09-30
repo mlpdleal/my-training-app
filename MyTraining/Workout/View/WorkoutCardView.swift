@@ -20,6 +20,8 @@ struct WorkoutCardView: View {
     @ObservedObject var historyViewModel: HistoryViewModel
     @ObservedObject var chartViewModel: ChartViewModel
     
+    @State private var showingAlert: Bool = false
+    
     var body: some View {
         ZStack(alignment: .trailing){
             NavigationLink(destination: WorkoutDetailView(id: .constant(id), viewModel: workoutViewModel, historyViewModel: historyViewModel, chartViewModel: chartViewModel),
@@ -71,10 +73,7 @@ struct WorkoutCardView: View {
                         HStack(alignment: .center){
                             
                             Button{
-                                workoutViewModel.deleteWorkout(workoutId: id)
-                                if chartViewModel.isWorkoutExists(workoutId: id){
-                                    chartViewModel.deleteChart(chartId: chartViewModel.getChartByWorkoutId(workoutId: id).id)
-                                }
+                                showingAlert = true
                             } label: {
                                 Image(systemName: "trash")
                                     .foregroundColor(.red)
@@ -95,6 +94,18 @@ struct WorkoutCardView: View {
         )
         .padding(.horizontal, 4)
         .padding(.vertical, 4)
+        .alert("Would you like to delete this workout?",isPresented: $showingAlert){
+            Button("Delete", role: .destructive) {
+                workoutViewModel.deleteWorkout(workoutId: id)
+                if chartViewModel.isWorkoutExists(workoutId: id){
+                    chartViewModel.deleteChart(chartId: chartViewModel.getChartByWorkoutId(workoutId: id).id)
+                }
+            }
+            
+            Button("Cancel", role: .cancel) {}
+        } message :{
+            Text("That action will also delete all statistics of this workout!")
+        }
     }
 }
 
