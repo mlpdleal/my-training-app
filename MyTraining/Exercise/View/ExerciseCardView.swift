@@ -30,6 +30,7 @@ struct ExerciseCardView: View {
                     Image(systemName: "camera")
                         .resizable()
                         .scaledToFit()
+                        .foregroundColor(Color.red)
                         .frame(width: 80, height: 45)
                         .clipped()
                     
@@ -67,7 +68,7 @@ struct ExerciseCardView: View {
             RoundedRectangle(cornerRadius: 4.0)
                 .stroke(Color.red.opacity(0.5), lineWidth: 1.4)
         )
-        .padding(.horizontal, 4)
+        .padding(.horizontal, 16)
         .padding(.vertical, 4)
     }
 }

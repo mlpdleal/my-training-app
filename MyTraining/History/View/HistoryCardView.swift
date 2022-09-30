@@ -25,6 +25,7 @@ struct HistoryCardView: View {
                     Image(systemName: "camera")
                         .resizable()
                         .scaledToFit()
+                        .foregroundColor(Color.red)
                         .frame(width: 80, height: 45)
                         .clipped()
                     

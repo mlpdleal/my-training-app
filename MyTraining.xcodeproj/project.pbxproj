@@ -15,8 +15,7 @@
 		EA2E7B6228DF829300CB95F4 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6128DF829300CB95F4 /* ExerciseViewModel.swift */; };
 		EA2E7B6428DF84F000CB95F4 /* ExerciseViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6328DF84F000CB95F4 /* ExerciseViewRouter.swift */; };
 		EA2E7B6628DFB41C00CB95F4 /* ExerciseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6528DFB41C00CB95F4 /* ExerciseCardView.swift */; };
-		EA2E7B6928E0E06F00CB95F4 /* ManagerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6828E0E06F00CB95F4 /* ManagerTime.swift */; };
-		EA2E7B6B28E0E16E00CB95F4 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6A28E0E16E00CB95F4 /* Mode.swift */; };
+		EA2E7B6928E0E06F00CB95F4 /* ManagerTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B6828E0E06F00CB95F4 /* ManagerTimer.swift */; };
 		EA2E7B7128E0EF0900CB95F4 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7028E0EF0900CB95F4 /* HistoryModel.swift */; };
 		EA2E7B7328E0F90C00CB95F4 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7228E0F90C00CB95F4 /* HistoryViewModel.swift */; };
 		EA2E7B7728E0FC1F00CB95F4 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E7B7628E0FC1F00CB95F4 /* HistoryView.swift */; };
@@ -70,8 +69,7 @@
 		EA2E7B6128DF829300CB95F4 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		EA2E7B6328DF84F000CB95F4 /* ExerciseViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewRouter.swift; sourceTree = "<group>"; };
 		EA2E7B6528DFB41C00CB95F4 /* ExerciseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCardView.swift; sourceTree = "<group>"; };
-		EA2E7B6828E0E06F00CB95F4 /* ManagerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTime.swift; sourceTree = "<group>"; };
-		EA2E7B6A28E0E16E00CB95F4 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		EA2E7B6828E0E06F00CB95F4 /* ManagerTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTimer.swift; sourceTree = "<group>"; };
 		EA2E7B7028E0EF0900CB95F4 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		EA2E7B7228E0F90C00CB95F4 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		EA2E7B7628E0FC1F00CB95F4 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -166,8 +164,7 @@
 		EA2E7B6728E0E05500CB95F4 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				EA2E7B6828E0E06F00CB95F4 /* ManagerTime.swift */,
-				EA2E7B6A28E0E16E00CB95F4 /* Mode.swift */,
+				EA2E7B6828E0E06F00CB95F4 /* ManagerTimer.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -553,7 +550,6 @@
 				EA595F5128E5190100449635 /* ChartCardViewModel.swift in Sources */,
 				EA2E7B7128E0EF0900CB95F4 /* HistoryModel.swift in Sources */,
 				EA2E7B7928E118F600CB95F4 /* HistoryCardView.swift in Sources */,
-				EA2E7B6B28E0E16E00CB95F4 /* Mode.swift in Sources */,
 				EA7BFD1428DCB6A200AE6E04 /* SplashUIState.swift in Sources */,
 				EA7BFD0028DCB0C300AE6E04 /* MyTrainingApp.swift in Sources */,
 				EACCF88D28DCEF130058186C /* FileManager.swift in Sources */,
@@ -577,7 +573,7 @@
 				EAE8DC3F28E3880E00F46E9F /* ChartModel.swift in Sources */,
 				EACCF88628DCE6A60058186C /* ButtonStyle.swift in Sources */,
 				EA7BFD1A28DCB9F100AE6E04 /* HomeView.swift in Sources */,
-				EA2E7B6928E0E06F00CB95F4 /* ManagerTime.swift in Sources */,
+				EA2E7B6928E0E06F00CB95F4 /* ManagerTimer.swift in Sources */,
 				EA2E7B7D28E13AC800CB95F4 /* HistoryCardViewModel.swift in Sources */,
 				EA7BFD1628DCB70B00AE6E04 /* SplashViewModel.swift in Sources */,
 			);
