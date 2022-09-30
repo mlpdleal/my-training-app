@@ -34,6 +34,7 @@
 		EA7BFD1628DCB70B00AE6E04 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFD1528DCB70B00AE6E04 /* SplashViewModel.swift */; };
 		EA7BFD1A28DCB9F100AE6E04 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFD1928DCB9F100AE6E04 /* HomeView.swift */; };
 		EA7BFD1E28DCC9B200AE6E04 /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7BFD1D28DCC9B200AE6E04 /* SplashViewRouter.swift */; };
+		EA93CD7128E78DE5008212A1 /* WorkoutCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93CD7028E78DE5008212A1 /* WorkoutCardViewModel.swift */; };
 		EA9BB27828DDE4CD0093E742 /* WorkoutViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BB27728DDE4CD0093E742 /* WorkoutViewRouter.swift */; };
 		EA9BB28028DDF6130093E742 /* WorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BB27F28DDF6130093E742 /* WorkoutTests.swift */; };
 		EABE55DC28E5C27E00EB68B0 /* ChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABE55DB28E5C27E00EB68B0 /* ChartTests.swift */; };
@@ -90,6 +91,7 @@
 		EA7BFD1528DCB70B00AE6E04 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		EA7BFD1928DCB9F100AE6E04 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EA7BFD1D28DCC9B200AE6E04 /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
+		EA93CD7028E78DE5008212A1 /* WorkoutCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardViewModel.swift; sourceTree = "<group>"; };
 		EA9BB27728DDE4CD0093E742 /* WorkoutViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewRouter.swift; sourceTree = "<group>"; };
 		EA9BB27D28DDF6130093E742 /* MyTrainingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTrainingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA9BB27F28DDF6130093E742 /* WorkoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTests.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			children = (
 				EACCF88728DCE9E70058186C /* WorkoutViewModel.swift */,
 				EA9BB27728DDE4CD0093E742 /* WorkoutViewRouter.swift */,
+				EA93CD7028E78DE5008212A1 /* WorkoutCardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				EACCF88F28DD08AB0058186C /* WorkoutModel.swift in Sources */,
 				EACCF88128DCE1790058186C /* WorkoutListView.swift in Sources */,
 				EA2E7B6428DF84F000CB95F4 /* ExerciseViewRouter.swift in Sources */,
+				EA93CD7128E78DE5008212A1 /* WorkoutCardViewModel.swift in Sources */,
 				EA2E7B7B28E129DE00CB95F4 /* EmptyListView.swift in Sources */,
 				EA45904C28E52D0200BE9B27 /* ChartDetailView.swift in Sources */,
 				EACCF87F28DCE13C0058186C /* HomeViewModel.swift in Sources */,

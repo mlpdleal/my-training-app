@@ -11,10 +11,7 @@ struct WorkoutCardView: View {
     
     @State private var action = false
     
-    @Binding var id: UUID
-    @Binding var photo: Data?
-    @Binding var name: String
-    @Binding var exercises: [Exercise]
+    let workoutCardViewModel: WorkoutCardViewModel
     
     @ObservedObject var workoutViewModel: WorkoutViewModel
     @ObservedObject var historyViewModel: HistoryViewModel
@@ -24,7 +21,7 @@ struct WorkoutCardView: View {
     
     var body: some View {
         ZStack(alignment: .trailing){
-            NavigationLink(destination: WorkoutDetailView(id: .constant(id), viewModel: workoutViewModel, historyViewModel: historyViewModel, chartViewModel: chartViewModel),
+            NavigationLink(destination: WorkoutDetailView(workoutCardViewModel: workoutCardViewModel, viewModel: workoutViewModel, historyViewModel: historyViewModel, chartViewModel: chartViewModel),
                            isActive: self.$action,
                            label: {
                                 EmptyView()
@@ -35,7 +32,7 @@ struct WorkoutCardView: View {
             } label: {
                 HStack{
                     Spacer()
-                    if let image = photo {
+                    if let image = workoutCardViewModel.imageData {
                         Image(uiImage: UIImage(data: image)!)
                             .resizable()
                             .scaledToFit()
@@ -54,13 +51,13 @@ struct WorkoutCardView: View {
                     Spacer()
                     HStack(alignment: .top){
                         VStack(alignment: .leading){
-                            Text(name)
+                            Text(workoutCardViewModel.name)
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(.red)
                                 .bold()
                                 .padding(.bottom, 2)
                                                         
-                            ForEach(exercises) { exercise in
+                            ForEach(workoutCardViewModel.exercises ?? []) { exercise in
                                 Text("- \(exercise.name)")
                                     .multilineTextAlignment(.leading)
                                     .foregroundColor(.gray)
@@ -96,9 +93,9 @@ struct WorkoutCardView: View {
         .padding(.vertical, 4)
         .alert("Would you like to delete this workout?",isPresented: $showingAlert){
             Button("Delete", role: .destructive) {
-                workoutViewModel.deleteWorkout(workoutId: id)
-                if chartViewModel.isWorkoutExists(workoutId: id){
-                    chartViewModel.deleteChart(chartId: chartViewModel.getChartByWorkoutId(workoutId: id).id)
+                workoutViewModel.deleteWorkout(workoutId: workoutCardViewModel.id)
+                if chartViewModel.isWorkoutExists(workoutId: workoutCardViewModel.id){
+                    chartViewModel.deleteChart(chartId: chartViewModel.getChartByWorkoutId(workoutId: workoutCardViewModel.id).id)
                 }
             }
             
@@ -113,9 +110,6 @@ struct WorkoutCardView_Previews: PreviewProvider {
     static var previews: some View {
         
         
-        WorkoutCardView(id: .constant(UUID()),
-                        photo: .constant(nil),
-                        name: .constant("Upper Body Routine"),
-                        exercises: .constant([Exercise(id: UUID(), photo: nil, name: "Pull Up", reps: nil, weight: nil, rest: nil, series: nil, cadence: nil, description: nil)]), workoutViewModel: WorkoutViewModel(), historyViewModel: HistoryViewModel(), chartViewModel: ChartViewModel())
+        WorkoutCardView(workoutCardViewModel: WorkoutCardViewModel(workout: Workout(id: UUID(), name: "Test", description: nil, imageData: nil, exercises: nil)), workoutViewModel: WorkoutViewModel(), historyViewModel: HistoryViewModel(), chartViewModel: ChartViewModel())
     }
 }
