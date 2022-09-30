@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+enum Mode {
+    case running
+    case stopped
+    case paused
+}
+
 struct WorkoutDetailView: View {
     
     @Environment(\.dismiss) var dismiss
@@ -18,9 +24,10 @@ struct WorkoutDetailView: View {
     @ObservedObject var historyViewModel: HistoryViewModel
     @ObservedObject var chartViewModel: ChartViewModel
     
-    @ObservedObject var managerTime = ManagerTime()
+    @ObservedObject var managerTimer = ManagerTimer()
     
     @State private var isStarted: Bool = false
+    @State private var mode: Mode = .stopped
         
     var body: some View {
         
@@ -50,11 +57,12 @@ struct WorkoutDetailView: View {
                 .padding(.top, 4)
                 .padding(.bottom, 4)
             
-            switch managerTime.mode {
+            switch mode {
             case .stopped:
                 withAnimation{
                     Button{
-                        managerTime.start()
+                        managerTimer.start()
+                        mode = .running
                     } label: {
                         Label("Start Routine", systemImage: "play.circle")
                             .font(.title)
@@ -67,6 +75,7 @@ struct WorkoutDetailView: View {
                     withAnimation{
                         Button{
                             finish()
+                            mode = .stopped
                         } label: {
                             Label("Finish", systemImage: "stop.circle")
                                 .foregroundColor(.blue)
@@ -78,7 +87,8 @@ struct WorkoutDetailView: View {
                     
                     withAnimation{
                         Button{
-                            managerTime.pause()
+                            managerTimer.stop()
+                            mode = .paused
                         } label: {
                             Label("Pause", systemImage: "pause.circle")
                                 .font(.title)
@@ -95,6 +105,7 @@ struct WorkoutDetailView: View {
                     withAnimation{
                         Button{
                             finish()
+                            mode = .stopped
                         } label: {
                             Label("Finish", systemImage: "stop.circle")
                                 .foregroundColor(.blue)
@@ -106,7 +117,8 @@ struct WorkoutDetailView: View {
                     
                     withAnimation{
                         Button{
-                            managerTime.start()
+                            managerTimer.start()
+                            mode = .running
                         } label: {
                             
                             Label("Continue", systemImage: "play.circle")
@@ -121,9 +133,9 @@ struct WorkoutDetailView: View {
             }
             
             
-                Text(managerTime.formatTime(counter: managerTime.secondElapsed))
+            Text(timeString(accumulatedTime: managerTimer.totalAccumulatedTime))
                 .padding(.top, 2)
-     
+                 
 
             Spacer()
                 List{
@@ -181,15 +193,13 @@ struct WorkoutDetailView: View {
             
             Spacer()
         }
-        .onChange(of: scenePhase){
-            self.managerTime.scenePhase = $0
-        }
+
   
     }
     
     func finish() {
-        managerTime.stop()
-        let history = History(id: UUID(), time: managerTime.formatTime(counter: managerTime.finalTime) , date: Date(), workout: viewModel.getWorkout(workoutId: id))
+        managerTimer.reset()
+        let history = History(id: UUID(), time: timeString(accumulatedTime: managerTimer.finishAccumulatedTime) , date: Date(), workout: viewModel.getWorkout(workoutId: id))
         historyViewModel.add(history)
         
         if chartViewModel.isWorkoutExists(workoutId: history.workout.id) {
@@ -204,6 +214,13 @@ struct WorkoutDetailView: View {
         }
         
         dismiss()
+    }
+    
+    func timeString(accumulatedTime: TimeInterval) -> String {
+        let hours = Int(accumulatedTime) / 3600
+        let minutes = Int(accumulatedTime) / 60 % 60
+        let seconds = Int(accumulatedTime) % 60
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
 }
 
