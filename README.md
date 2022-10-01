@@ -1,9 +1,8 @@
 # Index
+1. [About App](about app)
 
-1. [About App](# About App)
 
-
-# About App
+# About App <a name="about app"></a>
 An app for storing your street workout routines, calisthenics training, or bodybuilding exercises. This app is built using Swift and SwiftUI technologies.
 
 # Technologies
