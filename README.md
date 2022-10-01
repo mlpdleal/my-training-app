@@ -1,11 +1,14 @@
 # About App
 An app for storing your street workout routines, calisthenics training, or bodybuilding exercises. This app is built using Swift and SwiftUI technologies.
 
-# Info
+# Technologies
 
 * iOS 16
 * Swift 5
 * SwiftUI 4
+* File Manager
+* Image Picker
+* Charts
 
 # My Training App
 
