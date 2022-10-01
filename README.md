@@ -11,7 +11,7 @@ An app for storing your street workout routines, calisthenics training, or bodyb
 
 * Workout feature: You can create new workout routines and their exercises, list all of then and start a timer to measure the amount of time in your workout.
 
-<div style="text-align: center"> 
+<div style="text-align: right"> 
   <img src="https://user-images.githubusercontent.com/20096045/193409598-628f032c-b991-499b-a81b-25e581a30f9c.png" width=35% height=35%>
   <img src="https://user-images.githubusercontent.com/20096045/193409635-7a77326e-7930-4214-a594-f5ce7832059d.png" width=35% height=35%>
 </div>
