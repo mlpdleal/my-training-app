@@ -15,4 +15,4 @@ An app for storing your street workout routines, calisthenics training, or bodyb
 <img src="https://user-images.githubusercontent.com/20096045/193409635-7a77326e-7930-4214-a594-f5ce7832059d.png" width=50% height=50%>
 
 * History Feature: When you finish a timer of your workout routine, that workout will be saved in your history list.
-* Statistic Feature: FFor each workout created that has a history routine, it will be created a statistic item.
+* Statistic Feature: For each workout created that has a history routine, it will be created a statistic item.
