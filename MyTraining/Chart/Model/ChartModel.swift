@@ -11,5 +11,5 @@ struct ChartModel: Codable, Hashable, Identifiable {
     
     let id: UUID
     let workout: Workout
-    var histories: [History]
+    var chartItens: [ChartItemModel]
 }
