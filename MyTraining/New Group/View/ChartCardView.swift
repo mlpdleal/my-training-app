@@ -15,7 +15,7 @@ struct ChartCardView: View {
     
     var body: some View {
         ZStack(alignment: .trailing){
-            NavigationLink(destination: ChartDetailView(histories: viewModel.histories),
+            NavigationLink(destination: ChartDetailView(chartItens: viewModel.chartItens),
                            isActive: self.$action,
                            label: {
                                 EmptyView()
@@ -101,13 +101,7 @@ struct ChartCardView_Previews: PreviewProvider {
                                                                                         series: nil,
                                                                                         cadence: nil,
                                                                                         description: nil)]),
-                                                  histories: [History(id: UUID(),
-                                                                      time: "00:32:45",
-                                                                      date: Date(),
-                                                                      workout: Workout(id: UUID(),
-                                                                                       name: "Upper body routine",
-                                                                                       description: "Test routine",
-                                                                                       imageData: nil,
-                                                                                       exercises: [Exercise(id: UUID(), photo: nil, name: "Pull Up", reps: nil, weight: nil, rest: nil, series: nil, cadence: nil, description: nil)]))])))
+                                                  chartItens: [ChartItemModel(id: UUID(), time: TimeInterval(15), date: Date())])))
+                                                       
     }
 }
