@@ -11,7 +11,7 @@ import Charts
 
 struct ChartDetailView: View {
     
-   let histories: [History]
+   let chartItens: [ChartItemModel]
     
     var body: some View {
         NavigationStack{
@@ -27,65 +27,25 @@ struct ChartDetailView: View {
     @ViewBuilder
     func animateChart() -> some View {
         Chart{
-            ForEach(histories){ history in
-                BarMark(x: .value("Day", history.date, unit: .day),
-                        y: .value("Amount Seconds", timeToInt(time: history.time)))
+            ForEach(chartItens){ chartItem in
+                BarMark(x: .value("Day", chartItem.date.formatted(date: .abbreviated,
+                                                                time: .omitted)),
+                        y: .value("Amount Seconds", Int(chartItem.time)))
                 
             }
         }
         .frame(height: 300)
     }
     
-   func timeToInt(time: String) -> Int{
-        var seconds = 0
-         var minutes = 0
-         var hours = 0
-
-         let times = time.split(separator: ":")
-
-         hours = (Int(times[0]) ?? 0) * 60
-         minutes = ((Int(times[1]) ?? 0) + hours) * 60
-         seconds = (Int(times[2]) ?? 0) + minutes
-
-         return seconds
-     }
-    
 }
 
 struct ChartDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartDetailView(histories: [History(id: UUID(),
-                                            time: "00:34:45",
-                                            date: Date(),
-                                            workout: Workout(id: UUID(),
-                                                             name: "Upper body routine",
-                                                             description: "Test routine",
-                                                             imageData: nil,
-                                                             exercises: [Exercise(id: UUID(),
-                                                                                  photo: nil,
-                                                                                  name: "Pull Up",
-                                                                                  reps: nil,
-                                                                                  weight: nil,
-                                                                                  rest: nil,
-                                                                                  series: nil,
-                                                                                  cadence: nil,
-                                                                                  description: nil)])),
-                                    History(id: UUID(),
-                                            time: "00:37:45",
-                                            date: Date(),
-                                            workout: Workout(id: UUID(),
-                                                             name: "Upper body routine",
-                                                             description: "Test routine",
-                                                             imageData: nil,
-                                                             exercises: [Exercise(id: UUID(),
-                                                                                  photo: nil,
-                                                                                  name: "Pull Up",
-                                                                                  reps: nil,
-                                                                                  weight: nil,
-                                                                                  rest: nil,
-                                                                                  series: nil,
-                                                                                  cadence: nil,
-                                                                                  description: nil)]))])
+        ChartDetailView(chartItens: [ ChartItemModel(id: UUID(),
+                                                     time: TimeInterval(10),
+                                                     date: Date())
+        
+        ])
     }
 }
 

@@ -205,12 +205,12 @@ struct WorkoutDetailView: View {
         
         if chartViewModel.isWorkoutExists(workoutId: history.workout.id) {
             var chart = chartViewModel.getChartByWorkoutId(workoutId: history.workout.id)
-            chart.histories.append(history)
+            chart.chartItens.append(ChartItemModel(id: UUID(), time: managerTimer.finishAccumulatedTime, date: history.date))
             chartViewModel.updateChart(chartId: chart.id, chart: chart)
         } else {
-            var histories: [History] = []
-            histories.append(history)
-            let chart = ChartModel(id: UUID(), workout: history.workout, histories: histories)
+            let chart = ChartModel(id: UUID(),
+                                   workout: history.workout,
+                                   chartItens: [ChartItemModel(id: UUID(), time: managerTimer.finishAccumulatedTime, date: history.date)])
             chartViewModel.add(chart)
         }
         

@@ -11,12 +11,12 @@ struct ChartCardViewModel: Identifiable, Equatable{
     
     let id: UUID
     let workout: Workout
-    let histories: [History]
+    let chartItens: [ChartItemModel]
     
     init(chart: ChartModel){
         self.id = chart.id
         self.workout = chart.workout
-        self.histories = chart.histories
+        self.chartItens = chart.chartItens
     }
     
 }
