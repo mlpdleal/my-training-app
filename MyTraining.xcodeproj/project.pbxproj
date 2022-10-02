@@ -212,6 +212,7 @@
 		EA7BFCF328DCB0C300AE6E04 = {
 			isa = PBXGroup;
 			children = (
+				EA9BB27E28DDF6130093E742 /* MyTrainingTests */,
 				EA7BFCFE28DCB0C300AE6E04 /* MyTraining */,
 				EA7BFCFD28DCB0C300AE6E04 /* Products */,
 			);
@@ -236,7 +237,6 @@
 				EACCF87A28DCE0E80058186C /* Workout */,
 				EA7BFD1728DCB9CD00AE6E04 /* Home */,
 				EA7BFD0D28DCB0D100AE6E04 /* Splash */,
-				EA9BB27E28DDF6130093E742 /* MyTrainingTests */,
 				EA7BFCFF28DCB0C300AE6E04 /* MyTrainingApp.swift */,
 				EA7BFD0328DCB0C500AE6E04 /* Assets.xcassets */,
 				EA7BFD0528DCB0C500AE6E04 /* Preview Content */,

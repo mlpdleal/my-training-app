@@ -37,9 +37,9 @@ final class ChartTests: XCTestCase {
                               description: "Test",
                               imageData: nil, exercises: [Exercise(id: UUID(), photo: nil, name: "Exercise Test", reps: nil, weight: nil, rest: nil, series: nil, cadence: nil, description: nil)])
         
-        let history = History(id: UUID(), time: "00:57:29", date: Date(), workout: workout)
+
         
-        let chart = ChartModel(id: UUID(), workout: workout, histories: [history])
+        let chart = ChartModel(id: UUID(), workout: workout, chartItens: [ChartItemModel(id: UUID(), time: TimeInterval(15), date: Date())])
         
         XCTAssertTrue(chartViewModel.getCharts().isEmpty)
         
@@ -55,9 +55,9 @@ final class ChartTests: XCTestCase {
                               description: "Test",
                               imageData: nil, exercises: [Exercise(id: UUID(), photo: nil, name: "Exercise Test", reps: nil, weight: nil, rest: nil, series: nil, cadence: nil, description: nil)])
         
-        let history = History(id: UUID(), time: "00:57:29", date: Date(), workout: workout)
+   
         
-        let chart = ChartModel(id: UUID(), workout: workout, histories: [history])
+        let chart = ChartModel(id: UUID(), workout: workout, chartItens: [ChartItemModel(id: UUID(), time: TimeInterval(15), date: Date())])
         
         XCTAssertTrue(chartViewModel.getCharts().isEmpty)
         
