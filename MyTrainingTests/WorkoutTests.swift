@@ -50,6 +50,7 @@ final class WorkoutTests: XCTestCase {
         XCTAssertEqual(viewModel.getWorkout(workoutId: workout.id).name, workout.name)
     }
     
+    
     func testDeleteWorkout() {
         let workout = Workout(id: UUID(),
                               name: "Test",
